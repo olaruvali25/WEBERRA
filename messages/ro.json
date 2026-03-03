@@ -1,0 +1,558 @@
+{
+  "meta": {
+    "title": "Website Premium pentru Afaceri | Web Design Premium Romania",
+    "description": "Construim website-uri premium pentru afaceri din Romania. Site optimizat SEO, design modern si demo gratuit in 24h. Creste-ti vizibilitatea in Google."
+  },
+  "brand": {
+    "name": "Weberra",
+    "tagline": "Studio creativ pentru website-uri premium, mobile-first si orientate spre conversie pentru afaceri din Romania.",
+    "email": "hello@weberra.ro"
+  },
+  "nav": {
+    "examples": "Exemple",
+    "process": "Proces",
+    "faq": "FAQ",
+    "cta": "Cere demo gratuit",
+    "language": "Limba",
+    "theme": "Tema"
+  },
+  "hero": {
+    "eyebrow": "Website premium pentru afaceri locale din Romania",
+    "titleLine1": "Ridica afacerea ta.",
+    "titleLine2": "la nivel premium.",
+    "subtitle": "Construim gratuit, in 24h, un demo de website de prezentare cu ierarhie clara, look premium si directie SEO pentru Romania.",
+    "primaryCta": "Vezi cum functioneaza",
+    "secondaryCta": "Vezi exemple",
+    "trustLine": "Fara obligatii. Fara costuri ascunse. Primesti un demo real si o structura clara.",
+    "pills": [
+      "SEO Romania",
+      "Mobile-first",
+      "Homepage demo",
+      "Livrare 24h"
+    ],
+    "metrics": [
+      {
+        "value": "24h",
+        "label": "termen standard pentru demo"
+      },
+      {
+        "value": "1",
+        "label": "demo gratuit per business"
+      },
+      {
+        "value": "RO",
+        "label": "copy si structura pentru piata locala"
+      }
+    ],
+    "visualEyebrow": "Homepage demo",
+    "visualSystem": "Studio framework",
+    "visualLive": "Preview live",
+    "visualHeading": "Hero / structura",
+    "visualBody": "Rezervari, lead-uri, claritate",
+    "visualStatA": "SEO",
+    "visualStatB": "Mobile",
+    "visualStatC": "Premium",
+    "positioningLabel": "Pozitionare",
+    "positioningBody": "Mesaj clar, ierarhie curata si o prima impresie care ridica instant perceptia de brand.",
+    "note": "Un singur demo gratuit per business. Lucram pe capacitate limitata ca sa pastram nivelul."
+  },
+  "socialProof": {
+    "badge": "Proces simplu. Rezultat premium.",
+    "title": "De la brief la website demo in 24h",
+    "subtitle": "Un proces clar, orientat spre scalare si conversie.",
+    "testimonialsTitle": "Exemple de reactii",
+    "testimonials": [
+      {
+        "quote": "Exemplu: demo-ul ne-a facut instant business-ul sa para mai solid si mai premium decat orice aveam online.",
+        "name": "Bianca Radu",
+        "role": "Fondatoare, studio beauty",
+        "note": "Exemplu testimonial"
+      },
+      {
+        "quote": "Exemplu: ne-a placut ca am vazut direct nivelul de executie, fara pitch lung si fara presiune comerciala.",
+        "name": "Andrei Muresan",
+        "role": "Administrator, clinica locala",
+        "note": "Exemplu testimonial"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Completezi formularul",
+        "description": "Ne trimiti informatiile esentiale."
+      },
+      {
+        "title": "Construim conceptul",
+        "description": "Structura strategica + design premium."
+      },
+      {
+        "title": "Primesti link-ul",
+        "description": "Vezi exact cum poate arata site-ul tau."
+      }
+    ],
+    "stepTags": [
+      "Brief",
+      "Concept",
+      "Preview"
+    ]
+  },
+  "showcase": {
+    "badge": "Exemple de website-uri premium",
+    "title": "Asa pot arata prezentarile online.",
+    "subtitle": "Acestea sunt doar exemple. Mai important este cum poate arata afacerea ta. Incepe cu un demo gratuit.",
+    "toggleConcept": "Concept",
+    "toggleGlow": "Glow up",
+    "mediaLabel": "MP4 / cadre",
+    "railLabel": "Carusel premium",
+    "railBody": "Se misca singur. La hover sau touch incetineste ca sa poti citi fiecare directie mai clar.",
+    "viewHint": "Preview 9:16",
+    "previewLabel": "Preview",
+    "afterLabel": "After",
+    "demoLayerLabel": "Strat demo",
+    "glowUpLabel": "Glow up",
+    "focusLabel": "Focus",
+    "focusBody": "Mesaj, ierarhie si indicii premium gandite pentru conversie pe mobile si desktop.",
+    "mobileLabel": "Mobile-first",
+    "items": [
+      {
+        "title": "Website pentru restaurant",
+        "niche": "Restaurant",
+        "result": "Design modern, rezervari directe, imagine premium.",
+        "format": "portrait",
+        "tone": "teal"
+      },
+      {
+        "title": "Website pentru salon",
+        "niche": "Salon",
+        "result": "Prezentare vizuala puternica, programari simple, experienta eleganta.",
+        "format": "portrait",
+        "tone": "indigo"
+      },
+      {
+        "title": "Website pentru clinica",
+        "niche": "Clinica",
+        "result": "Credibilitate, structura clara, pozitionare profesionala.",
+        "format": "portrait",
+        "tone": "slate"
+      },
+      {
+        "title": "Website pentru business local",
+        "niche": "Business local",
+        "result": "Vizibilitate in Google si diferentiere reala.",
+        "format": "portrait",
+        "tone": "teal"
+      },
+      {
+        "title": "Website pentru servicii premium",
+        "niche": "Site de prezentare premium",
+        "result": "Mesaje clare, imagine rafinata si mai multa incredere pentru lead-uri valoroase.",
+        "format": "portrait",
+        "tone": "indigo"
+      },
+      {
+        "title": "Website pentru business in Romania",
+        "niche": "Website optimizat SEO",
+        "result": "Structura gandita pentru cautari locale, conversii si o prezenta serioasa in Google.",
+        "format": "portrait",
+        "tone": "slate"
+      },
+      {
+        "title": "Website pentru brand local",
+        "niche": "Web design premium",
+        "result": "Design premium, ierarhie clara si o experienta care ridica instant perceptia de brand.",
+        "format": "portrait",
+        "tone": "slate"
+      }
+    ]
+  },
+  "benefits": {
+    "badge": "Ce schimba un website premium",
+    "title": "Un website profesionist schimba modul in care e perceput business-ul tau.",
+    "subtitle": "Vizibilitate in Google, lead-uri directe, mai multa incredere si control total asupra brandului.",
+    "items": [
+      {
+        "title": "Apari in Google",
+        "description": "Vizibilitate reala pentru cautarile relevante din orasul tau."
+      },
+      {
+        "title": "Mai multe lead-uri directe",
+        "description": "Formulare, rezervari si cereri fara platforme terte."
+      },
+      {
+        "title": "Mai multa incredere",
+        "description": "Un site premium transmite profesionalism instant."
+      },
+      {
+        "title": "Control total asupra brandului",
+        "description": "Nu depinzi doar de social media."
+      }
+    ]
+  },
+  "offer": {
+    "includedTitle": "Ce primesti in demo-ul de website",
+    "included": [
+      "Homepage optimizata pentru conversii",
+      "Structura gandita pentru SEO Romania",
+      "Directie vizuala premium",
+      "Mesaje clare pentru publicul tau",
+      "Recomandari pentru dezvoltare completa"
+    ],
+    "notTitle": "Ce nu este",
+    "notItems": [
+      {
+        "title": "Nu este site-ul complet",
+        "description": "Acesta este un demo strategic de homepage, nu livrarea tuturor paginilor finale."
+      },
+      {
+        "title": "Nu include implementari complexe",
+        "description": "Integrarile avansate, automatizarile sau sistemele custom se discuta doar dupa validarea directiei."
+      },
+      {
+        "title": "Nu te obliga la nimic",
+        "description": "Scopul este sa vezi calitatea si structura propusa inainte sa decizi daca investesti in implementarea completa."
+      }
+    ]
+  },
+  "form": {
+    "badge": "Cerere demo gratuit",
+    "sectionTitle": "Completezi formularul. Noi construim directia.",
+    "sectionBody": "Un brief scurt ne ajuta sa construim un website pentru afaceri, optimizat SEO si gandit pentru conversii.",
+    "sectionAside": "Daca preferi sa vezi mai intai exact cum lucram, deschide pagina de proces. Acolo ai tot fluxul explicat pas cu pas.",
+    "processCta": "Vezi pagina de proces",
+    "title": "Completezi formularul si pornim demo-ul.",
+    "subtitle": "Brief scurt. Directie clara. Website premium pentru afacerea ta, fara costuri si fara obligatii.",
+    "estimated": "~2 minute",
+    "stepLabel": "Pasul {current} din {total}",
+    "stepNames": [
+      "Date afacere",
+      "Contact",
+      "Prezenta online",
+      "Preferinte",
+      "Imagini si trimitere"
+    ],
+    "stepDescriptions": [
+      "Spune-ne cine esti, in ce oras esti si ce fel de business ai.",
+      "Lasam un contact clar pentru livrare si eventuale clarificari.",
+      "Adauga linkurile care ne arata cum comunici azi online.",
+      "Spune-ne ce vibe, ce functionalitati si ce actiune vrei sa scoatem in fata.",
+      "Incarci imagini daca le ai si trimiti cererea cu acordul de contact."
+    ],
+    "tips": [
+      "Un singur demo gratuit per business.",
+      "Poti trimite formularul si fara imagini.",
+      "Daca avem nevoie de clarificari, revenim simplu, fara presiune."
+    ],
+    "labels": {
+      "businessName": "Nume afacere",
+      "businessType": "Tip afacere",
+      "city": "Locatie / oras",
+      "contactName": "Numele tau",
+      "phone": "Telefon",
+      "email": "Email",
+      "instagram": "Instagram",
+      "tiktok": "TikTok",
+      "facebook": "Facebook",
+      "website": "Website existent",
+      "details": "Ce stil, functionalitati sau vibe iti doresti?",
+      "consent": "Sunt de acord sa fiu contactat(a) pentru livrarea demo-ului."
+    },
+    "contactHint": "Persoana catre care trimitem demo-ul",
+    "placeholders": {
+      "businessName": "Ex: Atelier Bistro",
+      "businessType": "Ex: restaurant, clinica, salon, servicii locale",
+      "city": "Ex: Cluj-Napoca",
+      "contactName": "Ex: Maria Pop",
+      "phone": "Ex: 07xx xxx xxx",
+      "email": "Ex: contact@business.ro",
+      "instagram": "Link sau @handle",
+      "tiktok": "Link sau @handle",
+      "facebook": "Link pagina",
+      "website": "https://...",
+      "details": "Ex: vrem un vibe modern si premium, accent pe rezervari, galerie foto, servicii, recenzii si claritate pe mobil."
+    },
+    "quickTypes": [
+      "Restaurant",
+      "Clinica",
+      "Barber",
+      "Salon",
+      "Servicii locale"
+    ],
+    "detailChips": [
+      "vibe modern",
+      "lux discret",
+      "meniu",
+      "programari",
+      "rezervari",
+      "galerie foto",
+      "servicii",
+      "recenzii"
+    ],
+    "detailChipLabel": "Scurtaturi utile",
+    "linksNote": "Daca nu ai toate linkurile, lasa doar ce exista acum.",
+    "detailsNote": "Spune-ne ce trebuie sa simta un client cand intra pe site si ce actiune vrei sa faca.",
+    "uploadTitle": "Upload imagini",
+    "uploadSubtitle": "Poti incarca pana la 6 imagini. Daca nu le ai acum, trimite cererea oricum.",
+    "uploadDrop": "Trage fisierele aici sau fa click pentru a alege imagini.",
+    "uploadHint": "PNG, JPG sau WEBP. Maximum 6 fisiere. Fara cont, fara login.",
+    "uploadLater": "Poti trimite imagini suplimentare si ulterior, pe email.",
+    "uploadCta": "Alege imagini",
+    "uploadStatus": {
+      "uploading": "Se incarca...",
+      "done": "Incarcat",
+      "error": "Eroare upload"
+    },
+    "consentNote": "Datele sunt folosite doar pentru analiza cererii si livrarea demo-ului.",
+    "next": "Continua",
+    "back": "Inapoi",
+    "submit": "Trimite si primeste demo-ul",
+    "submitting": "Trimitem cererea...",
+    "successTitle": "Cererea a fost trimisa.",
+    "successBody": "Primesti confirmarea pe email in cateva minute. Demo-ul vine in maximum 24h.",
+    "successSteps": [
+      "Confirmam rapid cererea pe email.",
+      "Construim homepage-ul demo si structura recomandata.",
+      "Trimitem linkul si revenim pe canalul preferat."
+    ],
+    "errors": {
+      "required": "Completeaza acest camp.",
+      "email": "Introdu o adresa de email valida.",
+      "phone": "Introdu un numar de telefon valid.",
+      "details": "Spune-ne cateva detalii utile, minimum 20 de caractere.",
+      "consent": "Avem nevoie de acordul tau pentru a livra demo-ul.",
+      "upload": "Poti incarca maximum 6 imagini.",
+      "uploadConfig": "Upload-ul nu este configurat inca. Completeaza cheile Cloudinary in env.",
+      "uploadFailed": "Upload-ul a esuat pentru una dintre imagini. Incearca din nou.",
+      "submit": "Nu am putut trimite cererea acum. Incearca din nou."
+    }
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Intrebari frecvente",
+    "subtitle": "Raspunsuri clare inainte sa ceri demo-ul.",
+    "items": [
+      {
+        "question": "Este demo-ul gratuit?",
+        "answer": "Da. Fara costuri si fara obligatii."
+      },
+      {
+        "question": "Ce include?",
+        "answer": "Homepage strategica + structura optimizata SEO."
+      },
+      {
+        "question": "De ce am nevoie de website in 2026?",
+        "answer": "Pentru vizibilitate in Google, credibilitate si scalare reala."
+      },
+      {
+        "question": "Ce urmeaza dupa demo?",
+        "answer": "Putem continua cu dezvoltarea completa a website-ului premium."
+      }
+    ]
+  },
+  "finalCta": {
+    "badge": "Scalare 2026",
+    "title": "Afaceri serioase au website-uri serioase.",
+    "subtitle": "Primeste demo-ul gratuit si vezi cum poate arata business-ul tau la standard premium.",
+    "primary": "Cere demo gratuit",
+    "trust": "Vezi procesul pe pagina dedicata si intelege exact cum lucram."
+  },
+  "footer": {
+    "tagline": "Studio creativ pentru website-uri premium, mobile-first si SEO-ready pentru afaceri din Romania.",
+    "privacy": "Politica de confidentialitate",
+    "terms": "Termeni si conditii",
+    "copyright": "Toate drepturile rezervate.",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "emailLabel": "Email"
+  },
+  "privacy": {
+    "title": "Politica de confidentialitate",
+    "intro": "Aceasta pagina explica pe scurt ce date colectam prin formular si cum le folosim pentru a livra demo-ul solicitat.",
+    "sections": [
+      {
+        "title": "Ce date colectam",
+        "body": "Colectam datele introduse in formular: nume afacere, tip business, oras, date de contact, linkuri publice, preferinte si eventuale imagini."
+      },
+      {
+        "title": "Cum folosim datele",
+        "body": "Folosim datele exclusiv pentru a analiza cererea, a construi demo-ul si a reveni cu materialele promise. Nu vindem datele si nu le folosim pentru campanii nesolicitate."
+      },
+      {
+        "title": "Stocare si furnizori",
+        "body": "Datele pot fi procesate prin furnizori tehnici precum Vercel, Resend si Cloudinary, strict pentru functionalitatea formularului, emailului si uploadului de imagini."
+      },
+      {
+        "title": "Drepturile tale",
+        "body": "Ne poti scrie oricand la hello@weberra.ro pentru acces, rectificare sau stergerea datelor trimise."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Termeni si conditii",
+    "intro": "Aceasta pagina rezuma regulile de baza pentru solicitarea demo-ului gratuit si pentru relatia ulterioara dintre tine si Weberra.",
+    "sections": [
+      {
+        "title": "Natura ofertei",
+        "body": "Demo-ul gratuit reprezinta o propunere conceptuala de homepage si structura. Nu reprezinta livrarea integrala a unui website final."
+      },
+      {
+        "title": "Eligibilitate",
+        "body": "Ne rezervam dreptul de a limita cererile sau de a refuza solicitari duplicate, incomplete sau care nu se potrivesc capacitatii curente."
+      },
+      {
+        "title": "Comunicare",
+        "body": "Prin trimiterea formularului esti de acord sa fii contactat(a) exclusiv pentru clarificarea si livrarea demo-ului."
+      },
+      {
+        "title": "Proprietate intelectuala",
+        "body": "Conceptul trimis ramane material de prezentare pana la incheierea unui acord separat pentru implementare sau transfer."
+      }
+    ]
+  },
+  "demoPage": {
+    "metaTitle": "Website Demo Gratuit pentru Afaceri | Web Design Premium Romania",
+    "metaDescription": "Primeste un website demo premium pentru afacerea ta, gratuit in 24h. Concept optimizat SEO, structura strategica si design profesional pentru business-uri din Romania.",
+    "heroBadge": "Procesul prin care primesti un website premium pentru afacerea ta",
+    "heroTitle": "Cum primesti un website premium, gratuit in 24h",
+    "heroSubtitle": "In 2026, afacerile care scaleaza au un website profesionist. Iti aratam exact cum construim un site de prezentare premium pentru business-ul tau fara costuri si fara obligatii.",
+    "heroPrimary": "Cere demo-ul gratuit",
+    "heroSecondary": "Vezi cum functioneaza",
+    "trust": [
+      "Fara costuri ascunse",
+      "Demo real de homepage",
+      "Livrare in max. 24h",
+      "Un singur demo gratuit per business"
+    ],
+    "heroCardOneLabel": "SEO + conversie",
+    "heroCardOneBody": "Website pentru afaceri construit cu structura clara, mesaje strategice si baza solida pentru lead-uri si vizibilitate in Google.",
+    "heroCardTwoLabel": "Credibilitate premium",
+    "heroCardTwoBody": "Un site de prezentare premium schimba instant felul in care este perceput business-ul tau si pregateste terenul pentru scalare in 2026.",
+    "heroVisualLabel": "Preview website premium",
+    "heroVisualTitle": "Aici poti adauga primul ecran din demo-ul website-ului.",
+    "heroVisualBody": "Ideal pentru website restaurant, website clinica, website salon sau orice website business Romania.",
+    "whatBadge": "Website demo pentru afaceri din Romania",
+    "whatTitle": "Nu primesti doar un design. Primesti o directie de scalare online.",
+    "whatBody": "Demo-ul este construit strategic pentru a transforma vizitatorii in clienti si pentru a pozitiona afacerea ta corect in Google.",
+    "whatCards": [
+      {
+        "title": "Homepage construita pentru conversii",
+        "body": "Structura clara, mesaje strategice si CTA-uri care genereaza lead-uri reale. Nu doar un site frumos, ci un website care vinde."
+      },
+      {
+        "title": "Structura optimizata SEO",
+        "body": "Arhitectura gandita pentru cautarile din Google si pentru pozitionare locala. Fie ca ai restaurant, clinica, salon sau alt business site-ul tau trebuie sa fie vizibil."
+      },
+      {
+        "title": "Design premium adaptat brandului tau",
+        "body": "Fiecare afacere are un vibe diferit. Demo-ul reflecta exact identitatea ta modern, elegant, luxury sau minimalist."
+      }
+    ],
+    "whatCtaLabel": "Proces rapid",
+    "whatCtaTitle": "Completezi formularul. Noi construim directia.",
+    "whatCtaBody": "In 2 minute ne trimiti informatiile. In 24h primesti un website demo care poate schimba modul in care e perceput business-ul tau.",
+    "whatCtaButton": "Completeaza formularul",
+    "receivesTitle": "Ce intra in demo-ul tau",
+    "whatVisualLabel": "Preview demo",
+    "whatVisualTitle": "Adauga aici captura principala din website-ul demo.",
+    "whatVisualBody": "Poate fi hero-ul, homepage-ul complet sau un preview al modului in care arata web design-ul premium.",
+    "receives": [
+      "Homepage construita pentru conversii si lead-uri",
+      "Structura de website optimizat SEO pentru Google si cautari locale",
+      "Directie de web design premium adaptata brandului tau",
+      "Baza clara pentru dezvoltare website completa si scalare online"
+    ],
+    "processBadge": "Proces simplu. Impact real.",
+    "processTitle": "Cum construim demo-ul de website pentru afacerea ta",
+    "processIntro": "Un proces clar, orientat spre scalare si conversie.",
+    "processSideLabel": "Scalare + SEO",
+    "processSideBody": "Nu desenam doar un layout. Gandim cum va functiona website-ul pentru afacerea ta in Google, in perceptia clientilor si in procesul de conversie.",
+    "processVisualLabel": "Flux de lucru",
+    "processVisualTitle": "Aici poti adauga workflow-ul, preview-ul livrat sau un ecran din proces.",
+    "processVisualBody": "Un vizual clar ajuta clientul sa inteleaga cum trecem de la brief la website demo premium.",
+    "processSteps": [
+      {
+        "title": "Ne trimiti informatiile esentiale",
+        "description": "Numele afacerii, domeniul, orasul si serviciile principale. Datele care definesc pozitionarea ta online."
+      },
+      {
+        "title": "Analizam piata si oportunitatile SEO",
+        "description": "Identificam cum poate website-ul tau sa apara in Google si sa atraga clienti relevanti."
+      },
+      {
+        "title": "Construim conceptul premium",
+        "description": "Cream o homepage strategica, structurata pentru conversii si imagine profesionala."
+      },
+      {
+        "title": "Primesti demo-ul + plan de implementare",
+        "description": "Iti trimitem link-ul demo si discutam pasii urmatori pentru dezvoltarea completa a website-ului."
+      }
+    ],
+    "processTag1": "Brief",
+    "processTag2": "SEO",
+    "processTag3": "Concept",
+    "processTag4": "Plan",
+    "needsBadge": "Informatii pentru un website relevant",
+    "needsTitle": "Ce ne ajuta sa construim un site care aduce clienti",
+    "needsIntro": "Cu cat intelegem mai bine afacerea ta, cu atat demo-ul va fi mai relevant pentru industria si publicul tau.",
+    "needsVisualLabel": "Context business",
+    "needsVisualTitle": "Aici poti adauga imagini, referinte sau materiale care ne ajuta sa intelegem afacerea.",
+    "needsVisualBody": "Cu un context mai clar, putem construi un website optimizat SEO, mai relevant pentru piata ta si pentru publicul tau.",
+    "beforeTag": "Before",
+    "afterTag": "After",
+    "needs": [
+      "Numele si domeniul de activitate",
+      "Orasul si zona de operare (esential pentru SEO local)",
+      "Serviciile principale",
+      "Publicul tinta",
+      "Link-uri social media",
+      "Imagini reprezentative"
+    ],
+    "briefVisualLabel": "Materiale utile",
+    "briefVisualTitle": "Aici poti adauga imagini reprezentative pentru business.",
+    "briefVisualBody": "Locatia, echipa, produsele sau cadrele vizuale bune ne ajuta sa construim un site de prezentare mai convingator.",
+    "whyBadge": "De ce conteaza",
+    "whyTitle": "De ce un website premium face diferenta in 2026",
+    "whyIntro": "Un website business Romania bine gandit inseamna mai mult decat design. Inseamna credibilitate, control si lead-uri mai bune.",
+    "whyCards": [
+      {
+        "title": "Mai multa credibilitate",
+        "description": "Clientii au mai multa incredere intr-un business care arata profesionist si coerent online."
+      },
+      {
+        "title": "Mai multa vizibilitate",
+        "description": "Un website optimizat SEO poate atrage trafic relevant din Google, nu doar din social media."
+      },
+      {
+        "title": "Mai multe conversii",
+        "description": "Mesajul, structura si CTA-urile potrivite transforma interesul in programari, rezervari sau cereri."
+      }
+    ],
+    "formTitle": "Completeaza formularul si primeste demo-ul in 24h",
+    "formBody": "Website premium pentru afacerea ta. Fara obligatii. Fara costuri ascunse.",
+    "formAside": "In 2 minute ne trimiti brief-ul. In 24h primesti un website demo premium, gandit pentru credibilitate, SEO si conversie.",
+    "formConsentNote": "Prin trimiterea formularului, accepti sa fii contactat pentru livrarea demo-ului.",
+    "faqBadge": "FAQ",
+    "faqTitle": "Intrebari frecvente despre website-ul demo",
+    "faqIntro": "Raspunsuri clare inainte sa ceri demo-ul.",
+    "faq": [
+      {
+        "question": "Demo-ul este gratuit?",
+        "answer": "Da. Primesti un concept real de website fara costuri."
+      },
+      {
+        "question": "Ce include demo-ul?",
+        "answer": "Homepage strategica, structura optimizata SEO si directie vizuala premium."
+      },
+      {
+        "question": "De ce am nevoie de website in 2026?",
+        "answer": "Pentru ca vizibilitatea in Google, credibilitatea si controlul asupra brandului nu pot fi obtinute doar din social media."
+      },
+      {
+        "question": "Ce urmeaza dupa demo?",
+        "answer": "Daca directia este potrivita, continuam cu dezvoltarea completa a website-ului."
+      }
+    ],
+    "finalBadge": "2026",
+    "finalTitle": "In 2026, afacerile care cresc au un website profesionist.",
+    "finalBody": "Primeste demo-ul gratuit si vezi cum poate arata prezenta ta online la nivel premium.",
+    "backHome": "Vezi exemple"
+  }
+}

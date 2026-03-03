@@ -1,0 +1,29 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" rx="36" fill="#F6F8FB"/>
+  <rect width="1200" height="630" rx="36" fill="url(#bgA)"/>
+  <rect width="1200" height="630" rx="36" fill="url(#bgB)"/>
+  <rect x="58" y="52" width="248" height="64" rx="32" fill="rgba(255,255,255,0.76)" stroke="rgba(15,23,42,0.08)"/>
+  <text x="96" y="92" fill="#0F172A" font-family="Arial, sans-serif" font-size="28" font-weight="700">Weberra</text>
+  <text x="58" y="250" fill="#0F172A" font-family="Arial, sans-serif" font-size="76" font-weight="700">
+    <tspan x="58" dy="0">Demo website premium</tspan>
+    <tspan x="58" dy="86">gratuit, livrat in 24h.</tspan>
+  </text>
+  <text x="58" y="430" fill="#334155" font-family="Arial, sans-serif" font-size="30">
+    Website pentru afaceri din Romania. Design premium. Structura clara. SEO-ready.
+  </text>
+  <rect x="770" y="132" width="360" height="366" rx="34" fill="rgba(15,23,42,0.92)"/>
+  <rect x="804" y="168" width="292" height="42" rx="21" fill="rgba(255,255,255,0.10)"/>
+  <rect x="804" y="236" width="292" height="126" rx="28" fill="rgba(255,255,255,0.08)"/>
+  <rect x="804" y="382" width="138" height="84" rx="24" fill="rgba(255,255,255,0.09)"/>
+  <rect x="958" y="382" width="138" height="84" rx="24" fill="rgba(255,255,255,0.09)"/>
+  <defs>
+    <radialGradient id="bgA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(154 88) rotate(28) scale(420 250)">
+      <stop stop-color="#A7F3D0" stop-opacity="0.82"/>
+      <stop offset="1" stop-color="#A7F3D0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bgB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1022 74) rotate(145) scale(420 260)">
+      <stop stop-color="#C7D2FE" stop-opacity="0.88"/>
+      <stop offset="1" stop-color="#C7D2FE" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

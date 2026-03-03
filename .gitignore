@@ -1,0 +1,13 @@
+node_modules
+.next
+.next-build
+.next-dev
+.vercel
+.env
+.env.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+live-dev.log
+live-dev.err.log

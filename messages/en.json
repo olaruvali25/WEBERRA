@@ -1,0 +1,559 @@
+{
+  "meta": {
+    "title": "Premium Business Website | Premium Web Design Romania",
+    "description": "We build premium websites for businesses in Romania. SEO-optimized structure, modern design and a free demo within 24h. Grow your Google visibility."
+  },
+  "brand": {
+    "name": "Weberra",
+    "tagline": "Creative studio for premium, mobile-first and conversion-minded websites for Romanian businesses.",
+    "email": "hello@weberra.ro"
+  },
+  "nav": {
+    "examples": "Examples",
+    "process": "Process",
+    "faq": "FAQ",
+    "cta": "Request free demo",
+    "language": "Language",
+    "theme": "Theme"
+  },
+  "hero": {
+    "eyebrow": "Premium websites for local businesses in Romania",
+    "title": "Show clients that your business operates at a premium standard.",
+    "titleLine1": "Show clients that your business",
+    "titleLine2": "operates at a premium standard.",
+    "subtitle": "We build a free presentation website demo within 24h, with sharper hierarchy, stronger visual polish and clear SEO direction for Romania.",
+    "primaryCta": "See how it works",
+    "secondaryCta": "See examples",
+    "trustLine": "No obligation. No hidden fees. You receive a real demo and a clear structure.",
+    "pills": [
+      "SEO Romania",
+      "Mobile-first",
+      "Homepage demo",
+      "24h delivery"
+    ],
+    "metrics": [
+      {
+        "value": "24h",
+        "label": "standard demo turnaround"
+      },
+      {
+        "value": "1",
+        "label": "free demo per business"
+      },
+      {
+        "value": "RO",
+        "label": "copy and structure tuned for the local market"
+      }
+    ],
+    "visualEyebrow": "Homepage demo",
+    "visualSystem": "Studio framework",
+    "visualLive": "Live preview",
+    "visualHeading": "Hero / structure",
+    "visualBody": "Bookings, leads, clarity",
+    "visualStatA": "SEO",
+    "visualStatB": "Mobile",
+    "visualStatC": "Premium",
+    "positioningLabel": "Positioning",
+    "positioningBody": "Cleaner messaging, refined hierarchy and a first impression that raises perceived value immediately.",
+    "note": "One free demo per business. Capacity stays intentionally limited so the quality stays high."
+  },
+  "socialProof": {
+    "badge": "Simple process. Premium result.",
+    "title": "From brief to website demo in 24h",
+    "subtitle": "A clear process built around growth and conversion.",
+    "testimonialsTitle": "Sample reactions",
+    "testimonials": [
+      {
+        "quote": "Sample: the demo instantly made our business feel more established and significantly more premium online.",
+        "name": "Bianca Radu",
+        "role": "Founder, beauty studio",
+        "note": "Sample testimonial"
+      },
+      {
+        "quote": "Sample: we liked seeing the execution level immediately, without a long sales pitch or pressure.",
+        "name": "Andrei Muresan",
+        "role": "Owner, local clinic",
+        "note": "Sample testimonial"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Fill out the form",
+        "description": "Send the essential information."
+      },
+      {
+        "title": "We build the concept",
+        "description": "Strategic structure + premium design."
+      },
+      {
+        "title": "Receive the link",
+        "description": "See exactly how your website could look."
+      }
+    ],
+    "stepTags": [
+      "Brief",
+      "Concept",
+      "Preview"
+    ]
+  },
+  "showcase": {
+    "badge": "Examples of premium websites",
+    "title": "This is how a premium online presence can look.",
+    "subtitle": "These are only examples. What matters more is how your business could look. Start with a free demo.",
+    "toggleConcept": "Concept",
+    "toggleGlow": "Glow up",
+    "mediaLabel": "MP4 / stills",
+    "railLabel": "Premium carousel",
+    "railBody": "It moves on its own. On hover or touch it slows down so each direction is easier to read.",
+    "viewHint": "9:16 preview",
+    "previewLabel": "Preview",
+    "afterLabel": "After",
+    "demoLayerLabel": "Demo layer",
+    "glowUpLabel": "Glow up",
+    "focusLabel": "Focus",
+    "focusBody": "Messaging, hierarchy and premium trust cues shaped for mobile and desktop conversion.",
+    "mobileLabel": "Mobile-first",
+    "items": [
+      {
+        "title": "Restaurant website",
+        "niche": "Restaurant",
+        "result": "Modern design, direct bookings and a premium brand feel.",
+        "format": "portrait",
+        "tone": "teal"
+      },
+      {
+        "title": "Salon website",
+        "niche": "Salon",
+        "result": "Strong visual presentation, simple appointments and an elegant experience.",
+        "format": "portrait",
+        "tone": "indigo"
+      },
+      {
+        "title": "Clinic website",
+        "niche": "Clinic",
+        "result": "Credibility, clear structure and professional positioning.",
+        "format": "portrait",
+        "tone": "slate"
+      },
+      {
+        "title": "Local business website",
+        "niche": "Local business",
+        "result": "Google visibility and real differentiation.",
+        "format": "portrait",
+        "tone": "teal"
+      },
+      {
+        "title": "Premium service website",
+        "niche": "Premium presentation site",
+        "result": "Sharper messaging, more refined visuals and stronger trust for high-ticket leads.",
+        "format": "portrait",
+        "tone": "indigo"
+      },
+      {
+        "title": "Business website for Romania",
+        "niche": "SEO-optimized website",
+        "result": "A structure built for local search, conversion and stronger Google presence.",
+        "format": "portrait",
+        "tone": "slate"
+      },
+      {
+        "title": "Website for a local brand",
+        "niche": "Premium web design",
+        "result": "Premium design, clearer hierarchy and an experience that instantly elevates perception.",
+        "format": "portrait",
+        "tone": "slate"
+      }
+    ]
+  },
+  "benefits": {
+    "badge": "What a premium website changes",
+    "title": "A professional website changes how your business is perceived.",
+    "subtitle": "Google visibility, direct leads, stronger trust and full control over your brand.",
+    "items": [
+      {
+        "title": "Appear in Google",
+        "description": "Real visibility for the searches that matter in your city."
+      },
+      {
+        "title": "More direct leads",
+        "description": "Forms, bookings and enquiries without relying on third-party platforms."
+      },
+      {
+        "title": "More trust",
+        "description": "A premium website signals professionalism instantly."
+      },
+      {
+        "title": "Full brand control",
+        "description": "You are not dependent on social media alone."
+      }
+    ]
+  },
+  "offer": {
+    "includedTitle": "What you get in the website demo",
+    "included": [
+      "A conversion-focused homepage",
+      "Structure built for SEO in Romania",
+      "Premium visual direction",
+      "Clear messaging for your audience",
+      "Recommendations for full development"
+    ],
+    "notTitle": "What it is not",
+    "notItems": [
+      {
+        "title": "Not the full website",
+        "description": "This is a strategic homepage demo, not the delivery of every final page."
+      },
+      {
+        "title": "No complex implementation yet",
+        "description": "Advanced integrations, automations or custom systems are discussed only after the direction is approved."
+      },
+      {
+        "title": "No obligation",
+        "description": "The point is to let you assess the quality and structure before deciding on a full build."
+      }
+    ]
+  },
+  "form": {
+    "badge": "Free demo request",
+    "sectionTitle": "Complete the form. We build the direction.",
+    "sectionBody": "A short brief helps us shape a premium business website built for Google visibility and conversion.",
+    "sectionAside": "If you prefer to understand the process first, open the process page. It explains the entire workflow clearly.",
+    "processCta": "Open the process page",
+    "title": "Complete the form and we start the demo.",
+    "subtitle": "Short brief. Clear direction. A premium website concept for your business, with no cost and no obligation.",
+    "estimated": "~2 minutes",
+    "stepLabel": "Step {current} of {total}",
+    "stepNames": [
+      "Business basics",
+      "Contact",
+      "Online presence",
+      "Preferences",
+      "Images and submit"
+    ],
+    "stepDescriptions": [
+      "Tell us who you are, where the business is based and what type of business it is.",
+      "We keep one clear contact for delivery and any required clarification.",
+      "Add the links that show how the business communicates online today.",
+      "Tell us what vibe, features and main action should be highlighted.",
+      "Upload images if you have them and submit the request with contact consent."
+    ],
+    "tips": [
+      "One free demo per business.",
+      "You can submit without images.",
+      "If we need clarification, we follow up simply and without pressure."
+    ],
+    "labels": {
+      "businessName": "Business name",
+      "businessType": "Business type",
+      "city": "City / location",
+      "contactName": "Your name",
+      "phone": "Phone",
+      "email": "Email",
+      "instagram": "Instagram",
+      "tiktok": "TikTok",
+      "facebook": "Facebook",
+      "website": "Existing website",
+      "details": "What style, features or vibe do you want?",
+      "consent": "I agree to be contacted for the delivery of the demo."
+    },
+    "contactHint": "The person who should receive the demo",
+    "placeholders": {
+      "businessName": "Example: Atelier Bistro",
+      "businessType": "Example: restaurant, clinic, salon, local services",
+      "city": "Example: Cluj-Napoca",
+      "contactName": "Example: Maria Pop",
+      "phone": "Example: +40...",
+      "email": "Example: contact@business.ro",
+      "instagram": "Link or @handle",
+      "tiktok": "Link or @handle",
+      "facebook": "Page link",
+      "website": "https://...",
+      "details": "Example: modern premium vibe, stronger booking flow, gallery, services, testimonials and clearer mobile hierarchy."
+    },
+    "quickTypes": [
+      "Restaurant",
+      "Clinic",
+      "Barber",
+      "Salon",
+      "Local services"
+    ],
+    "detailChips": [
+      "modern vibe",
+      "quiet luxury",
+      "menu",
+      "appointments",
+      "bookings",
+      "gallery",
+      "services",
+      "testimonials"
+    ],
+    "detailChipLabel": "Useful shortcuts",
+    "linksNote": "If you do not have every link yet, just send what already exists.",
+    "detailsNote": "Tell us what the visitor should feel on the site and what action matters most.",
+    "uploadTitle": "Upload images",
+    "uploadSubtitle": "You can upload up to 6 images. If you do not have them now, submit anyway.",
+    "uploadDrop": "Drag files here or click to choose images.",
+    "uploadHint": "PNG, JPG or WEBP. Maximum 6 files. No account, no login.",
+    "uploadLater": "You can always send extra images later by email.",
+    "uploadCta": "Choose images",
+    "uploadStatus": {
+      "uploading": "Uploading...",
+      "done": "Uploaded",
+      "error": "Upload failed"
+    },
+    "consentNote": "Your data is used only to review the request and deliver the demo.",
+    "next": "Continue",
+    "back": "Back",
+    "submit": "Submit and receive the demo",
+    "submitting": "Sending request...",
+    "successTitle": "Your request was sent.",
+    "successBody": "You will receive a confirmation email shortly. The demo arrives within 24h.",
+    "successSteps": [
+      "We confirm the request by email.",
+      "We build the homepage demo and recommended structure.",
+      "We send the link and follow up on your preferred channel."
+    ],
+    "errors": {
+      "required": "Please complete this field.",
+      "email": "Enter a valid email address.",
+      "phone": "Enter a valid phone number.",
+      "details": "Please share useful context, at least 20 characters.",
+      "consent": "We need your consent to deliver the demo.",
+      "upload": "You can upload up to 6 images.",
+      "uploadConfig": "Uploads are not configured yet. Add the Cloudinary env values.",
+      "uploadFailed": "One of the uploads failed. Please try again.",
+      "submit": "We could not send the request right now. Please try again."
+    }
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Frequently asked questions",
+    "subtitle": "Clear answers before you request the demo.",
+    "items": [
+      {
+        "question": "Is the demo free?",
+        "answer": "Yes. No cost and no obligation."
+      },
+      {
+        "question": "What does it include?",
+        "answer": "A strategic homepage plus SEO-optimized structure."
+      },
+      {
+        "question": "Why do I need a website in 2026?",
+        "answer": "For Google visibility, credibility and real business growth."
+      },
+      {
+        "question": "What happens after the demo?",
+        "answer": "We can move forward with the full premium website development."
+      }
+    ]
+  },
+  "finalCta": {
+    "badge": "Scale in 2026",
+    "title": "Serious businesses have serious websites.",
+    "subtitle": "Get the free demo and see how your business can look at a premium standard.",
+    "primary": "Request free demo",
+    "trust": "See the dedicated process page if you want the full workflow before you start."
+  },
+  "footer": {
+    "tagline": "Creative studio for premium, mobile-first and SEO-ready websites for Romanian businesses.",
+    "privacy": "Privacy policy",
+    "terms": "Terms and conditions",
+    "copyright": "All rights reserved.",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "emailLabel": "Email"
+  },
+  "privacy": {
+    "title": "Privacy policy",
+    "intro": "This page explains what data we collect through the form and how we use it to deliver the requested demo.",
+    "sections": [
+      {
+        "title": "What data we collect",
+        "body": "We collect the details submitted in the form: business information, contact data, public links, preferences and optional image uploads."
+      },
+      {
+        "title": "How we use the data",
+        "body": "We use the data only to review the request, prepare the demo and send the promised materials. We do not sell data or use it for unsolicited campaigns."
+      },
+      {
+        "title": "Storage and providers",
+        "body": "Data may be processed through technical providers such as Vercel, Resend and Cloudinary strictly for hosting, email delivery and image uploads."
+      },
+      {
+        "title": "Your rights",
+        "body": "You can email hello@weberra.ro at any time to request access, correction or deletion of the submitted data."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms and conditions",
+    "intro": "This page summarizes the basic rules for requesting the free demo and any later collaboration with Weberra.",
+    "sections": [
+      {
+        "title": "Nature of the offer",
+        "body": "The free demo is a homepage concept and structure proposal. It is not the full delivery of a completed production website."
+      },
+      {
+        "title": "Eligibility",
+        "body": "We may limit requests or refuse duplicate, incomplete or capacity-breaking submissions."
+      },
+      {
+        "title": "Communication",
+        "body": "By submitting the form you agree to be contacted strictly for clarification and delivery of the requested demo."
+      },
+      {
+        "title": "Intellectual property",
+        "body": "The concept remains presentation material until a separate implementation or transfer agreement is signed."
+      }
+    ]
+  },
+  "demoPage": {
+    "metaTitle": "Free Website Demo for Businesses | Premium Web Design Romania",
+    "metaDescription": "Receive a premium website demo for your business, free within 24h. SEO-oriented concept, strategic structure and professional design for businesses in Romania.",
+    "heroBadge": "The process for getting a premium website for your business",
+    "heroTitle": "How to get a premium, Google-optimized website for free in 24h",
+    "heroSubtitle": "In 2026, the businesses that scale have a professional website. We show you exactly how we build a premium presentation website for your business with no cost and no obligation.",
+    "heroPrimary": "Request the free demo",
+    "heroSecondary": "See how it works",
+    "trust": [
+      "No hidden fees",
+      "Real homepage demo",
+      "Delivered within 24h",
+      "One free demo per business"
+    ],
+    "heroCardOneLabel": "SEO + conversion",
+    "heroCardOneBody": "A business website built with clear structure, strategic messaging and the right foundation for stronger leads and better Google visibility.",
+    "heroCardTwoLabel": "Premium credibility",
+    "heroCardTwoBody": "A premium presentation website instantly changes how your business is perceived and gives you a stronger base for scaling in 2026.",
+    "heroVisualLabel": "Premium website preview",
+    "heroVisualTitle": "Add the first screen of the website demo here.",
+    "heroVisualBody": "Ideal for a restaurant website, clinic website, salon website or any business website in Romania.",
+    "whatBadge": "Website demo for businesses in Romania",
+    "whatTitle": "You do not just get a design. You get a direction for online growth.",
+    "whatBody": "The demo is built strategically to turn visitors into customers and position your business properly in Google.",
+    "whatCards": [
+      {
+        "title": "Homepage built for conversions",
+        "body": "Clear structure, strategic messaging and CTAs that generate real leads. Not just a beautiful site, but a website that sells."
+      },
+      {
+        "title": "SEO-optimized structure",
+        "body": "Architecture planned for Google searches and local visibility. Whether you run a restaurant, clinic, salon or another business, your website needs to be discoverable."
+      },
+      {
+        "title": "Premium design tailored to your brand",
+        "body": "Every business has a different vibe. The demo reflects your identity precisely modern, elegant, luxury or minimalist."
+      }
+    ],
+    "whatCtaLabel": "Fast process",
+    "whatCtaTitle": "You complete the form. We build the direction.",
+    "whatCtaBody": "In two minutes you send the essentials. Within 24 hours you receive a website demo that can change how your business is perceived.",
+    "whatCtaButton": "Complete the form",
+    "receivesTitle": "What goes into your demo",
+    "whatVisualLabel": "Demo preview",
+    "whatVisualTitle": "Add the main screenshot from the website demo here.",
+    "whatVisualBody": "It can be the hero section, the full homepage or a preview that shows the quality of the premium web design.",
+    "receives": [
+      "A homepage built for conversions and lead generation",
+      "An SEO-oriented website structure for Google and local search",
+      "A premium web design direction tailored to your brand",
+      "A clear base for full website development and online growth"
+    ],
+    "processBadge": "Simple process. Real impact.",
+    "processTitle": "How we build the website demo for your business",
+    "processIntro": "A clear process focused on growth and conversion.",
+    "processSideLabel": "Growth + SEO",
+    "processSideBody": "We do not just sketch a layout. We think about how the website will perform in Google, how it will shape perception and how it will convert interest into leads.",
+    "processVisualLabel": "Workflow",
+    "processVisualTitle": "Add the workflow, delivered preview or a process screen here.",
+    "processVisualBody": "A clear visual helps the client understand how we move from brief to premium website demo.",
+    "processSteps": [
+      {
+        "title": "You send the essential information",
+        "description": "The business name, industry, city and core services. The details that define your online positioning."
+      },
+      {
+        "title": "We review the market and SEO opportunities",
+        "description": "We identify how your website can appear in Google and attract relevant customers."
+      },
+      {
+        "title": "We build the premium concept",
+        "description": "We create a strategic homepage structured for conversions and a stronger professional image."
+      },
+      {
+        "title": "You receive the demo + implementation plan",
+        "description": "We send you the demo link and discuss the next steps for the full website build."
+      }
+    ],
+    "processTag1": "Brief",
+    "processTag2": "SEO",
+    "processTag3": "Concept",
+    "processTag4": "Plan",
+    "needsBadge": "Information for a relevant website",
+    "needsTitle": "What helps us build a site that brings in customers",
+    "needsIntro": "The better we understand your business, the more relevant the demo becomes for your industry and audience.",
+    "needsVisualLabel": "Business context",
+    "needsVisualTitle": "Add images, references or materials that help us understand the business.",
+    "needsVisualBody": "With clearer context, we can build an SEO-optimized website that fits your market and your audience far better.",
+    "beforeTag": "Before",
+    "afterTag": "After",
+    "needs": [
+      "Business name and industry",
+      "City and service area (essential for local SEO)",
+      "Main services",
+      "Target audience",
+      "Social media links",
+      "Representative images"
+    ],
+    "briefVisualLabel": "Useful materials",
+    "briefVisualTitle": "Add representative business visuals here.",
+    "briefVisualBody": "The location, team, products or strong brand visuals help us shape a more convincing presentation website.",
+    "whyBadge": "Why it matters",
+    "whyTitle": "Why a premium website makes the difference in 2026",
+    "whyIntro": "A well-built business website in Romania means more than design. It means credibility, control and better leads.",
+    "whyCards": [
+      {
+        "title": "More credibility",
+        "description": "Customers trust a business that looks professional, intentional and coherent online."
+      },
+      {
+        "title": "More visibility",
+        "description": "An SEO-optimized website can attract relevant Google traffic, not just social media attention."
+      },
+      {
+        "title": "More conversions",
+        "description": "The right messaging, structure and CTAs turn interest into appointments, bookings or qualified enquiries."
+      }
+    ],
+    "formTitle": "Complete the form and receive the demo within 24h",
+    "formBody": "A premium website for your business. No obligation. No hidden costs.",
+    "formAside": "In two minutes you send the brief. Within 24 hours you receive a premium website demo designed for credibility, SEO and conversion.",
+    "formConsentNote": "By submitting the form, you agree to be contacted for the delivery of the demo.",
+    "faqBadge": "FAQ",
+    "faqTitle": "Frequently asked questions about the website demo",
+    "faqIntro": "Clear answers before you request the demo.",
+    "faq": [
+      {
+        "question": "Is the demo free?",
+        "answer": "Yes. You receive a real website concept at no cost."
+      },
+      {
+        "question": "What does the demo include?",
+        "answer": "A strategic homepage, SEO-friendly structure and premium visual direction."
+      },
+      {
+        "question": "Why do I need a website in 2026?",
+        "answer": "Because Google visibility, credibility and brand control cannot come from social media alone."
+      },
+      {
+        "question": "What happens after the demo?",
+        "answer": "If the direction is right, we move forward with the full website development."
+      }
+    ],
+    "finalBadge": "2026",
+    "finalTitle": "In 2026, growing businesses have a professional website.",
+    "finalBody": "Receive the free demo and see what your online presence can look like at a premium level.",
+    "backHome": "See examples"
+  }
+}
