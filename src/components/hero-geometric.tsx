@@ -1,8 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Circle } from "lucide-react";
-
 import { TrackedAnchor } from "@/src/components/tracked-anchor";
 import { cn } from "@/src/lib/utils";
 
@@ -84,7 +82,6 @@ type HeroGeometricProps = {
 };
 
 export function HeroGeometric({
-  badge,
   title1,
   title2,
   subtitle,
@@ -153,16 +150,6 @@ export function HeroGeometric({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: heroEase }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#6f4d98]/14 bg-white/[0.38] px-3 py-1 md:mb-12 dark:border-white/[0.10] dark:bg-white/[0.04]"
-          >
-            <Circle className="h-2 w-2 fill-fuchsia-300/80 text-fuchsia-300/80" />
-            <span className="text-sm tracking-wide text-[#4d3770]/78 dark:text-white/62">{badge}</span>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.7, ease: heroEase }}
           >
             <h1 className="text-balance text-5xl font-semibold tracking-[-0.05em] sm:text-6xl md:text-8xl">
               <span className="bg-gradient-to-b from-[#26123c] to-[#5f4485] bg-clip-text text-transparent dark:from-white dark:to-white/78">
@@ -178,9 +165,9 @@ export function HeroGeometric({
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.9, ease: heroEase }}
+            transition={{ duration: 1, delay: 0.7, ease: heroEase }}
           >
-            <p className="mx-auto mb-8 mt-6 max-w-2xl px-4 text-base font-light leading-relaxed tracking-wide text-[#4f3b6d]/76 sm:text-lg md:mb-10 md:text-xl dark:text-white/48">
+            <p className="mx-auto mb-8 mt-6 max-w-2xl px-4 text-base font-light leading-relaxed tracking-wide text-black sm:text-lg md:mb-10 md:text-xl dark:text-white/48">
               {subtitle}
             </p>
           </motion.div>
@@ -188,7 +175,7 @@ export function HeroGeometric({
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.1, ease: heroEase }}
+            transition={{ duration: 1, delay: 0.9, ease: heroEase }}
             className="flex flex-col items-center justify-center gap-3 sm:flex-row"
           >
             <TrackedAnchor
