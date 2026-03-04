@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { LaptopMinimal, MoonStar, SunMedium } from "lucide-react";
 import { useTheme } from "next-themes";
 
@@ -13,11 +14,18 @@ const themes = [
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const activeTheme = mounted ? theme ?? "system" : "system";
 
   return (
     <div className="flex items-center gap-1 rounded-full border border-border/70 bg-white/60 p-1 backdrop-blur dark:bg-white/5">
       {themes.map(({ value, label, icon: Icon }) => {
-        const active = theme === value;
+        const active = activeTheme === value;
         return (
           <button
             key={value}

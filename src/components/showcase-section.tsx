@@ -5,6 +5,7 @@ import { motion, useAnimationFrame, useInView, useMotionValue, useReducedMotion 
 import { useEffect, useRef, useState } from "react";
 
 import { AnimatedTitle } from "@/src/components/animated-title";
+import { TrackedAnchor } from "@/src/components/tracked-anchor";
 import { Badge } from "@/src/components/ui/badge";
 import { cn } from "@/src/lib/utils";
 
@@ -26,6 +27,12 @@ type ShowcaseSectionProps = {
   title: string;
   subtitle: string;
   items: ShowcaseItem[];
+  cta: {
+    label: string;
+    href: string;
+    source: string;
+    locale: string;
+  };
   labels: {
     media: string;
     mobile: string;
@@ -54,8 +61,10 @@ const toneClasses: Record<
 
 const showcaseMedia: ShowcaseMedia[] = [
   { src: "/showcase/showcase-3.mp4", type: "video", presentation: "motion" },
+  { src: "/hero-carousel/hero-carousel-1.jpeg", type: "image", presentation: "still" },
   { src: "/showcase/showcase-1.jpeg", type: "image", presentation: "still" },
   { src: "/showcase/showcase-5.mp4", type: "video", presentation: "motion" },
+  { src: "/hero-carousel/hero-carousel-2.jpeg", type: "image", presentation: "still" },
   { src: "/showcase/showcase-4.jpeg", type: "image", presentation: "still" },
   { src: "/showcase/showcase-7.mp4", type: "video", presentation: "motion" },
   { src: "/showcase/showcase-2.jpeg", type: "image", presentation: "still" },
@@ -78,13 +87,13 @@ function ShowcaseCard({
       className="group w-[18.5rem] shrink-0 rounded-[2.4rem] border border-border/70 bg-card/68 p-4 shadow-[0_30px_80px_rgba(35,16,58,0.10)] backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_42px_110px_rgba(58,28,93,0.18)] sm:w-[19.5rem] lg:w-[20.5rem]"
       aria-label={`${item.title} ${item.niche}`}
     >
-        <div
-          className={cn(
-            "relative overflow-hidden rounded-[2rem] border border-white/50 bg-gradient-to-b p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.44)] dark:border-white/10",
-            tone.shell
-          )}
-        >
-          <div className="absolute inset-x-3 top-3 h-10 rounded-[1.2rem] border border-white/50 bg-white/56 backdrop-blur dark:border-white/10 dark:bg-white/6" />
+      <div
+        className={cn(
+          "relative overflow-hidden rounded-[2rem] border border-white/50 bg-gradient-to-b p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.44)] dark:border-white/10",
+          tone.shell
+        )}
+      >
+        <div className="absolute inset-x-3 top-3 h-10 rounded-[1.2rem] border border-white/50 bg-white/56 backdrop-blur dark:border-white/10 dark:bg-white/6" />
 
         <div className="relative overflow-hidden rounded-[1.8rem] border border-white/15 bg-[linear-gradient(180deg,rgba(26,10,42,1),rgba(15,8,25,1))] shadow-[0_35px_90px_rgba(23,8,41,0.40)] aspect-[9/16]">
           <div className="absolute inset-0">
@@ -131,23 +140,11 @@ function ShowcaseCard({
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.1),rgba(8,3,15,0.04)_24%,rgba(6,2,10,0.48)_100%)]" />
         </div>
       </div>
-
-      <div className="space-y-3 px-1 pb-1 pt-5">
-        <div className="flex items-start justify-between gap-4">
-          <div className="space-y-2">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-muted-foreground">
-              {item.niche}
-            </p>
-            <h3 className="text-[1.55rem] font-semibold tracking-tight">{item.title}</h3>
-          </div>
-        </div>
-        <p className="text-sm leading-relaxed text-muted-foreground">{item.result}</p>
-      </div>
     </article>
   );
 }
 
-export function ShowcaseSection({ badge, title, subtitle, items, labels }: ShowcaseSectionProps) {
+export function ShowcaseSection({ badge, title, subtitle, items, cta, labels }: ShowcaseSectionProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const loopRef = useRef<HTMLDivElement | null>(null);
   const x = useMotionValue(0);
@@ -165,7 +162,7 @@ export function ShowcaseSection({ badge, title, subtitle, items, labels }: Showc
     const element = loopRef.current;
 
     const updateWidth = () => {
-      setLoopWidth(element.offsetWidth);
+      setLoopWidth(element.scrollWidth);
     };
 
     updateWidth();
@@ -176,7 +173,7 @@ export function ShowcaseSection({ badge, title, subtitle, items, labels }: Showc
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [items.length]);
 
   useEffect(() => {
     x.set(0);
@@ -188,7 +185,7 @@ export function ShowcaseSection({ badge, title, subtitle, items, labels }: Showc
       return;
     }
 
-    const targetSpeed = !isInView ? 0 : isInteracting ? 10 : 30;
+    const targetSpeed = !isInView ? 0 : isInteracting ? 9 : 26;
     speedRef.current += (targetSpeed - speedRef.current) * 0.08;
 
     if (Math.abs(speedRef.current) < 0.05) {
@@ -201,7 +198,7 @@ export function ShowcaseSection({ badge, title, subtitle, items, labels }: Showc
 
   return (
     <section id="showcase" ref={sectionRef} className="section-spacing scroll-mt-28">
-      <div className="section-shell space-y-10">
+      <div className="section-shell">
         <div className="max-w-3xl space-y-4">
           <Badge variant="accent">{badge}</Badge>
           <AnimatedTitle
@@ -209,43 +206,53 @@ export function ShowcaseSection({ badge, title, subtitle, items, labels }: Showc
             className="max-w-4xl text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl"
           />
           <p className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">{subtitle}</p>
+          <TrackedAnchor
+            href={cta.href}
+            eventName="cta_click"
+            payload={{ source: cta.source, locale: cta.locale }}
+            variant="default"
+            size="lg"
+            className="mt-2 w-full sm:w-auto"
+          >
+            {cta.label}
+          </TrackedAnchor>
         </div>
+      </div>
 
-        <div
-          className="relative"
-          onPointerEnter={() => setIsInteracting(true)}
-          onPointerLeave={() => setIsInteracting(false)}
-          onTouchStart={() => setIsInteracting(true)}
-          onTouchEnd={() => setIsInteracting(false)}
-          onTouchCancel={() => setIsInteracting(false)}
-        >
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-[linear-gradient(90deg,rgba(244,238,255,0.94)_0%,rgba(244,238,255,0.72)_28%,rgba(244,238,255,0.22)_62%,rgba(244,238,255,0)_100%)] dark:bg-[linear-gradient(90deg,rgba(5,1,9,0.94)_0%,rgba(5,1,9,0.72)_28%,rgba(5,1,9,0.22)_62%,rgba(5,1,9,0)_100%)] sm:w-24" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-[linear-gradient(270deg,rgba(244,238,255,0.94)_0%,rgba(244,238,255,0.72)_28%,rgba(244,238,255,0.22)_62%,rgba(244,238,255,0)_100%)] dark:bg-[linear-gradient(270deg,rgba(5,1,9,0.94)_0%,rgba(5,1,9,0.72)_28%,rgba(5,1,9,0.22)_62%,rgba(5,1,9,0)_100%)] sm:w-24" />
+      <div
+        className="relative left-1/2 mt-10 w-screen -translate-x-1/2"
+        onPointerEnter={() => setIsInteracting(true)}
+        onPointerLeave={() => setIsInteracting(false)}
+        onTouchStart={() => setIsInteracting(true)}
+        onTouchEnd={() => setIsInteracting(false)}
+        onTouchCancel={() => setIsInteracting(false)}
+      >
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-[linear-gradient(90deg,rgba(244,238,255,0.94)_0%,rgba(244,238,255,0.72)_28%,rgba(244,238,255,0.22)_62%,rgba(244,238,255,0)_100%)] dark:bg-[linear-gradient(90deg,rgba(5,1,9,0.94)_0%,rgba(5,1,9,0.72)_28%,rgba(5,1,9,0.22)_62%,rgba(5,1,9,0)_100%)] sm:w-24 lg:w-32" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-[linear-gradient(270deg,rgba(244,238,255,0.94)_0%,rgba(244,238,255,0.72)_28%,rgba(244,238,255,0.22)_62%,rgba(244,238,255,0)_100%)] dark:bg-[linear-gradient(270deg,rgba(5,1,9,0.94)_0%,rgba(5,1,9,0.72)_28%,rgba(5,1,9,0.22)_62%,rgba(5,1,9,0)_100%)] sm:w-24 lg:w-32" />
 
-          {reduceMotion ? (
-            <div className="flex gap-5 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {items.map((item, index) => (
-                <ShowcaseCard key={item.title} item={item} index={index} />
-              ))}
-            </div>
-          ) : (
-            <div className="overflow-hidden py-5">
-              <motion.div className="flex w-max gap-5" style={{ x }}>
-                <div ref={loopRef} className="flex gap-5 pr-5">
-                  {items.map((item, index) => (
-                    <ShowcaseCard key={`${item.title}-primary`} item={item} index={index} />
-                  ))}
-                </div>
+        {reduceMotion ? (
+          <div className="flex gap-5 overflow-x-auto px-5 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:px-7 lg:px-10">
+            {items.map((item, index) => (
+              <ShowcaseCard key={item.title} item={item} index={index} />
+            ))}
+          </div>
+        ) : (
+          <div className="overflow-hidden py-5">
+            <motion.div className="flex w-max gap-5" style={{ x }}>
+              <div ref={loopRef} className="flex gap-5 pr-5">
+                {items.map((item, index) => (
+                  <ShowcaseCard key={`${item.title}-primary`} item={item} index={index} />
+                ))}
+              </div>
 
-                <div className="flex gap-5">
-                  {items.map((item, index) => (
-                    <ShowcaseCard key={`${item.title}-${index}-clone`} item={item} index={index} />
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-          )}
-        </div>
+              <div className="flex gap-5 pr-5" aria-hidden="true">
+                {items.map((item, index) => (
+                  <ShowcaseCard key={`${item.title}-${index}-clone`} item={item} index={index} />
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        )}
       </div>
     </section>
   );

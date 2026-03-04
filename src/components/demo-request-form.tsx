@@ -1,21 +1,18 @@
 "use client";
 
-import { type ReactNode, useRef, useState, useTransition } from "react";
+import { type ReactNode, useState, useTransition } from "react";
 import {
   Building2,
   Check,
+  ChevronDown,
   ChevronLeft,
   ChevronRight,
   Globe2,
-  ImagePlus,
-  Images,
   LoaderCircle,
   Mail,
   MessageSquareText,
   Phone,
-  Sparkles,
-  Trash2,
-  UploadCloud
+  Sparkles
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -30,25 +27,20 @@ import { trackEvent } from "@/src/lib/analytics";
 import type { DemoRequestInput } from "@/src/lib/schema";
 import { cn } from "@/src/lib/utils";
 
-type UploadItem = {
-  id: string;
-  name: string;
-  url?: string;
-  preview?: string;
-  status: "uploading" | "done" | "error";
-};
-
 type FormValues = Omit<DemoRequestInput, "locale" | "consent"> & {
   consent: boolean;
+  businessTypeOther: string;
 };
 
 type FieldName = keyof DemoRequestInput;
+type FormFieldName = keyof FormValues;
 
 const totalSteps = 5;
 
 const initialValues: FormValues = {
   businessName: "",
   businessType: "",
+  businessTypeOther: "",
   city: "",
   contactName: "",
   phone: "",
@@ -58,7 +50,6 @@ const initialValues: FormValues = {
   facebook: "",
   website: "",
   details: "",
-  imageUrls: [],
   consent: false,
   honey: ""
 };
@@ -94,26 +85,37 @@ export function DemoRequestFormContent({
   const locale = useLocale() as DemoRequestInput["locale"];
   const [step, setStep] = useState(1);
   const [values, setValues] = useState<FormValues>(initialValues);
-  const [errors, setErrors] = useState<Partial<Record<FieldName, string>>>({});
+  const [errors, setErrors] = useState<Partial<Record<FormFieldName, string>>>({});
   const [actionMessage, setActionMessage] = useState<string | null>(null);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-  const [uploads, setUploads] = useState<UploadItem[]>([]);
-  const [isDragActive, setIsDragActive] = useState(false);
   const [isPending, startTransition] = useTransition();
-  const inputRef = useRef<HTMLInputElement>(null);
 
   const stepNames = t.raw("stepNames") as string[];
   const stepDescriptions = t.raw("stepDescriptions") as string[];
-  const quickTypes = t.raw("quickTypes") as string[];
-  const detailChips = t.raw("detailChips") as string[];
+  const businessTypeOptions = t.raw("quickTypes") as string[];
+  const otherBusinessTypeValue = t("otherBusinessTypeValue");
   const successSteps = t.raw("successSteps") as string[];
   const progress = (step / totalSteps) * 100;
-  const uploadInProgress = uploads.some((item) => item.status === "uploading");
-  const stepIcons = [Building2, Phone, Globe2, MessageSquareText, Images];
+  const stepIcons = [Building2, Phone, Globe2, MessageSquareText, Sparkles];
+  const isCustomBusinessType = values.businessType === otherBusinessTypeValue;
 
   function setField<K extends keyof typeof initialValues>(field: K, value: (typeof initialValues)[K]) {
     setValues((current) => ({ ...current, [field]: value }));
     setErrors((current) => ({ ...current, [field]: undefined }));
+    setActionMessage(null);
+  }
+
+  function setBusinessType(value: string) {
+    setValues((current) => ({
+      ...current,
+      businessType: value,
+      businessTypeOther: value === otherBusinessTypeValue ? current.businessTypeOther : ""
+    }));
+    setErrors((current) => ({
+      ...current,
+      businessType: undefined,
+      businessTypeOther: undefined
+    }));
     setActionMessage(null);
   }
 
@@ -126,11 +128,14 @@ export function DemoRequestFormContent({
   }
 
   function validateStep(currentStep: number) {
-    const nextErrors: Partial<Record<FieldName, string>> = {};
+    const nextErrors: Partial<Record<FormFieldName, string>> = {};
 
     if (currentStep === 1) {
       if (!values.businessName.trim()) nextErrors.businessName = fieldError();
       if (!values.businessType.trim()) nextErrors.businessType = fieldError();
+      if (values.businessType === otherBusinessTypeValue && !values.businessTypeOther.trim()) {
+        nextErrors.businessTypeOther = fieldError();
+      }
       if (!values.city.trim()) nextErrors.city = fieldError();
     }
 
@@ -165,114 +170,8 @@ export function DemoRequestFormContent({
     setStep((current) => Math.max(1, current - 1));
   }
 
-  function appendDetailChip(chip: string) {
-    const nextValue = values.details.trim() ? `${values.details.trim()}\n${chip}` : chip;
-    setField("details", nextValue);
-  }
-
-  async function uploadFiles(fileList: FileList | File[]) {
-    const files = Array.from(fileList);
-    if (files.length === 0) return;
-
-    if (files.length + values.imageUrls.length > 6) {
-      setActionMessage(t("errors.upload"));
-      setStatus("error");
-      return;
-    }
-
-    const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
-    const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
-
-    if (!cloudName || !uploadPreset) {
-      setActionMessage(t("errors.uploadConfig"));
-      setStatus("error");
-      return;
-    }
-
-    const newUploads = files.map((file) => ({
-      id: crypto.randomUUID(),
-      name: file.name,
-      preview: URL.createObjectURL(file),
-      status: "uploading" as const
-    }));
-
-    setUploads((current) => [...current, ...newUploads]);
-    setStatus("idle");
-    setActionMessage(null);
-
-    await Promise.all(
-      files.map(async (file, index) => {
-        const localId = newUploads[index].id;
-        const body = new FormData();
-        body.append("file", file);
-        body.append("upload_preset", uploadPreset);
-        body.append("folder", "weberra/demo-requests");
-
-        try {
-          const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
-            method: "POST",
-            body
-          });
-          const data = await response.json();
-
-          if (!response.ok || !data.secure_url) {
-            throw new Error("Upload failed");
-          }
-
-          setUploads((current) =>
-            current.map((item) =>
-              item.id === localId
-                ? {
-                    ...item,
-                    status: "done",
-                    url: data.secure_url
-                  }
-                : item
-            )
-          );
-
-          setValues((current) => ({
-            ...current,
-            imageUrls: [...current.imageUrls, data.secure_url]
-          }));
-        } catch (error) {
-          console.error("[cloudinaryUpload]", error);
-          setUploads((current) =>
-            current.map((item) =>
-              item.id === localId
-                ? {
-                    ...item,
-                    status: "error"
-                  }
-                : item
-            )
-          );
-          setActionMessage(t("errors.uploadFailed"));
-          setStatus("error");
-        }
-      })
-    );
-  }
-
-  function removeUpload(id: string) {
-    setUploads((current) => {
-      const match = current.find((item) => item.id === id);
-      if (match?.preview) {
-        URL.revokeObjectURL(match.preview);
-      }
-      if (match?.url) {
-        setValues((formState) => ({
-          ...formState,
-          imageUrls: formState.imageUrls.filter((url) => url !== match.url)
-        }));
-      }
-
-      return current.filter((item) => item.id !== id);
-    });
-  }
-
   function submit() {
-    if (!validateStep(5) || uploadInProgress) {
+    if (!validateStep(5)) {
       return;
     }
 
@@ -280,8 +179,10 @@ export function DemoRequestFormContent({
     setStatus("idle");
 
     startTransition(async () => {
+      const { businessTypeOther, ...rest } = values;
       const result = await submitDemoRequest({
-        ...values,
+        ...rest,
+        businessType: isCustomBusinessType ? businessTypeOther.trim() : values.businessType,
         consent: true,
         locale
       });
@@ -381,6 +282,14 @@ export function DemoRequestFormContent({
                   </div>
                   <div>
                     <p className="text-sm font-semibold leading-snug">{item}</p>
+                    <p
+                      className={cn(
+                        "mt-1.5 text-xs leading-relaxed",
+                        active ? "text-white/82" : "text-muted-foreground dark:text-white/72"
+                      )}
+                    >
+                      {stepDescriptions[index]}
+                    </p>
                   </div>
                 </div>
               );
@@ -446,26 +355,43 @@ export function DemoRequestFormContent({
 
                 <FieldShell>
                   <Label htmlFor="businessType">{t("labels.businessType")}</Label>
-                  <Input
-                    id="businessType"
-                    value={values.businessType}
-                    onChange={(event) => setField("businessType", event.target.value)}
-                    placeholder={t("placeholders.businessType")}
-                    aria-invalid={Boolean(errors.businessType)}
-                    className="mt-2 h-14 rounded-[1.3rem]"
-                  />
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {quickTypes.map((item) => (
-                      <button
-                        key={item}
-                        type="button"
-                        onClick={() => setField("businessType", item)}
-                        className="rounded-full border border-border/70 bg-background/70 px-3.5 py-2 text-xs font-semibold text-muted-foreground transition-colors hover:border-accent/40 hover:text-foreground"
-                      >
-                        {item}
-                      </button>
-                    ))}
+                  <div className="relative mt-3 overflow-hidden rounded-[1.65rem] border border-[#d9c4ff]/80 bg-[linear-gradient(135deg,rgba(244,236,255,0.92),rgba(232,219,255,0.86)_55%,rgba(216,197,255,0.78))] p-1 shadow-[0_20px_58px_rgba(96,48,156,0.16)] transition-all duration-300 focus-within:border-accent/50 focus-within:shadow-[0_24px_64px_rgba(96,48,156,0.22)] dark:border-white/12 dark:bg-[linear-gradient(135deg,rgba(58,26,95,0.86),rgba(28,12,46,0.94)_58%,rgba(16,8,28,0.98))] dark:shadow-[0_22px_56px_rgba(9,4,16,0.34)]">
+                    <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.85),transparent)] dark:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.22),transparent)]" />
+                    <div className="pointer-events-none absolute left-5 top-1/2 z-[1] -translate-y-1/2 rounded-full bg-[linear-gradient(135deg,rgba(112,65,255,0.18),rgba(174,116,255,0.12))] p-2 text-accent shadow-[inset_0_1px_0_rgba(255,255,255,0.55)] dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(168,132,247,0.08))] dark:text-white/82 dark:shadow-none">
+                      <Building2 className="size-4" />
+                    </div>
+                    <select
+                      id="businessType"
+                      value={values.businessType}
+                      onChange={(event) => setBusinessType(event.target.value)}
+                      aria-invalid={Boolean(errors.businessType)}
+                      className="relative z-[2] h-14 w-full appearance-none rounded-[1.3rem] border border-white/24 bg-[linear-gradient(135deg,rgba(235,223,255,0.62),rgba(222,206,250,0.44))] px-16 pr-12 text-sm font-medium text-[#2f174a] outline-none backdrop-blur-xl transition-colors focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-white/8 dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] dark:text-white/92"
+                    >
+                      <option value="">{t("placeholders.businessType")}</option>
+                      {businessTypeOptions.map((item) => (
+                        <option key={item} value={item}>
+                          {item}
+                        </option>
+                      ))}
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-3 right-3 flex items-center rounded-full border border-white/36 bg-[linear-gradient(135deg,rgba(238,228,255,0.55),rgba(221,205,248,0.34))] px-3 text-[#5a31a0] shadow-[0_8px_18px_rgba(85,43,138,0.10)] dark:border-white/10 dark:bg-[linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] dark:text-white/72">
+                      <ChevronDown className="size-4" />
+                    </div>
                   </div>
+                  {isCustomBusinessType ? (
+                    <div className="mt-4">
+                      <Label htmlFor="businessTypeOther">{t("labels.businessTypeOther")}</Label>
+                      <Input
+                        id="businessTypeOther"
+                        value={values.businessTypeOther}
+                        onChange={(event) => setField("businessTypeOther", event.target.value)}
+                        placeholder={t("placeholders.businessTypeOther")}
+                        aria-invalid={Boolean(errors.businessTypeOther)}
+                        className="mt-2 h-14 rounded-[1.3rem]"
+                      />
+                      <FieldError message={errors.businessTypeOther} />
+                    </div>
+                  ) : null}
                   <FieldError message={errors.businessType} />
                 </FieldShell>
 
@@ -606,22 +532,6 @@ export function DemoRequestFormContent({
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{t("detailsNote")}</p>
                   <FieldError message={errors.details} />
                 </FieldShell>
-
-                <FieldShell>
-                  <p className="text-sm font-medium text-foreground">{t("detailChipLabel")}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {detailChips.map((chip) => (
-                      <button
-                        key={chip}
-                        type="button"
-                        onClick={() => appendDetailChip(chip)}
-                        className="rounded-full border border-border/70 bg-background/70 px-3.5 py-2 text-xs font-semibold text-muted-foreground transition-colors hover:border-accent/40 hover:text-foreground"
-                      >
-                        + {chip}
-                      </button>
-                    ))}
-                  </div>
-                </FieldShell>
               </div>
             ) : null}
 
@@ -629,89 +539,10 @@ export function DemoRequestFormContent({
               <div className="space-y-4">
                 <FieldShell>
                   <div className="space-y-2">
-                    <h3 className="text-xl font-semibold tracking-tight">{t("uploadTitle")}</h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{t("uploadSubtitle")}</p>
+                    <h3 className="text-xl font-semibold tracking-tight">{t("submitReviewTitle")}</h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">{t("submitReviewBody")}</p>
                   </div>
-
-                  <input
-                    ref={inputRef}
-                    type="file"
-                    accept="image/png,image/jpeg,image/webp"
-                    multiple
-                    className="hidden"
-                    onChange={(event) => {
-                      if (event.target.files) {
-                        void uploadFiles(event.target.files);
-                      }
-                    }}
-                  />
-
-                  <button
-                    type="button"
-                    onClick={() => inputRef.current?.click()}
-                    onDragOver={(event) => {
-                      event.preventDefault();
-                      setIsDragActive(true);
-                    }}
-                    onDragLeave={() => setIsDragActive(false)}
-                    onDrop={(event) => {
-                      event.preventDefault();
-                      setIsDragActive(false);
-                      void uploadFiles(event.dataTransfer.files);
-                    }}
-                    className={cn(
-                      "mt-5 flex min-h-60 w-full flex-col items-center justify-center rounded-[2rem] border border-dashed border-border/80 bg-background/70 px-6 text-center transition-colors",
-                      isDragActive && "border-accent bg-accent/6"
-                    )}
-                  >
-                    <div className="mb-4 inline-flex size-14 items-center justify-center rounded-full bg-accent/10 text-accent">
-                      <UploadCloud className="size-6" />
-                    </div>
-                    <p className="text-base font-semibold">{t("uploadDrop")}</p>
-                    <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">{t("uploadHint")}</p>
-                    <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-[linear-gradient(135deg,rgba(112,65,255,1),rgba(174,116,255,0.95))] px-4 py-2 text-sm font-semibold text-white shadow-[0_14px_36px_rgba(112,65,255,0.22)]">
-                      <ImagePlus className="size-4" />
-                      {t("uploadCta")}
-                    </span>
-                  </button>
-
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t("uploadLater")}</p>
                 </FieldShell>
-
-                {uploads.length > 0 ? (
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    {uploads.map((item) => (
-                      <div key={item.id} className="flex items-center gap-3 rounded-[1.5rem] border border-border/70 bg-card/72 p-3 backdrop-blur">
-                        <div className="flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-[1.25rem] bg-secondary">
-                          {item.preview ? (
-                            // eslint-disable-next-line @next/next/no-img-element
-                            <img src={item.preview} alt={item.name} className="h-full w-full object-cover" />
-                          ) : (
-                            <ImagePlus className="size-5 text-muted-foreground" />
-                          )}
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <p className="truncate text-sm font-medium">{item.name}</p>
-                          <p className="text-xs text-muted-foreground">
-                            {item.status === "uploading"
-                              ? t("uploadStatus.uploading")
-                              : item.status === "done"
-                                ? t("uploadStatus.done")
-                                : t("uploadStatus.error")}
-                          </p>
-                        </div>
-                        <button
-                          type="button"
-                          onClick={() => removeUpload(item.id)}
-                          className="rounded-full p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                          aria-label={`Remove ${item.name}`}
-                        >
-                          <Trash2 className="size-4" />
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                ) : null}
 
                 <FieldShell>
                   <label className="flex items-start gap-3 text-sm">
@@ -760,10 +591,10 @@ export function DemoRequestFormContent({
                 variant="default"
                 size="lg"
                 onClick={submit}
-                disabled={isPending || uploadInProgress}
+                disabled={isPending}
                 className="w-full sm:w-auto"
               >
-                {isPending || uploadInProgress ? (
+                {isPending ? (
                   <>
                     <LoaderCircle className="mr-2 size-4 animate-spin" />
                     {t("submitting")}

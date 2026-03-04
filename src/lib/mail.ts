@@ -37,13 +37,6 @@ function buildOwnerHtml(data: DemoRequestInput) {
     )
     .join("");
 
-  const images =
-    data.imageUrls.length > 0
-      ? `<ol>${data.imageUrls
-          .map((url) => `<li><a href="${escapeHtml(url)}">${escapeHtml(url)}</a></li>`)
-          .join("")}</ol>`
-      : "<p>Nu au fost trimise imagini.</p>";
-
   return `
     <div style="font-family:Arial,sans-serif;line-height:1.6;color:#0f172a">
       <h2>Cerere noua pentru demo website</h2>
@@ -60,8 +53,6 @@ function buildOwnerHtml(data: DemoRequestInput) {
       <ul>${links || "<li>Nu au fost oferite linkuri.</li>"}</ul>
       <h3>Detalii si preferinte</h3>
       <p>${formatMultiline(escapeHtml(data.details))}</p>
-      <h3>Imagini incarcate</h3>
-      ${images}
     </div>
   `;
 }

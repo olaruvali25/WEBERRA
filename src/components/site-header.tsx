@@ -98,13 +98,23 @@ export function SiteHeader({ locale, brandName, links, cta }: SiteHeaderProps) {
             <a
               href={cta.href}
               onClick={() => trackEvent("cta_click", { source: cta.source, locale })}
-              className="inline-flex h-11 items-center justify-center rounded-full border border-white/15 bg-[linear-gradient(135deg,rgba(39,16,63,0.98),rgba(92,48,147,0.98)_58%,rgba(164,134,250,0.95))] px-5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_55px_rgba(88,43,140,0.38)]"
+              className="relative isolate inline-flex h-11 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-[linear-gradient(135deg,rgba(39,16,63,0.98),rgba(92,48,147,0.98)_58%,rgba(164,134,250,0.95))] px-5 text-sm font-semibold text-white shadow-[inset_-1px_0_0_rgba(255,255,255,0.22),0_18px_42px_rgba(88,43,140,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[inset_-1px_0_0_rgba(255,255,255,0.26),0_22px_55px_rgba(88,43,140,0.38)]"
             >
               {cta.label}
             </a>
           </div>
 
           <div className="flex items-center gap-2 lg:hidden">
+            <a
+              href={cta.href}
+              onClick={() => {
+                trackEvent("cta_click", { source: `${cta.source}_mobile_bar`, locale });
+                closeMenu();
+              }}
+              className="relative isolate inline-flex h-11 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-[linear-gradient(135deg,rgba(39,16,63,0.98),rgba(92,48,147,0.98)_58%,rgba(164,134,250,0.95))] px-4 text-sm font-semibold text-white shadow-[inset_-1px_0_0_rgba(255,255,255,0.22),0_18px_42px_rgba(88,43,140,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[inset_-1px_0_0_rgba(255,255,255,0.26),0_22px_55px_rgba(88,43,140,0.34)]"
+            >
+              {cta.label}
+            </a>
             <button
               type="button"
               onClick={() => setMobileMenuOpen((current) => !current)}
@@ -129,17 +139,6 @@ export function SiteHeader({ locale, brandName, links, cta }: SiteHeaderProps) {
                   className="rounded-[1.25rem] border border-border/70 bg-card/65 px-4 py-4 text-foreground hover:text-accent"
                 />
               ))}
-
-              <a
-                href={cta.href}
-                onClick={() => {
-                  trackEvent("cta_click", { source: `${cta.source}_mobile`, locale });
-                  closeMenu();
-                }}
-                className="inline-flex h-12 items-center justify-center rounded-[1.25rem] border border-white/15 bg-[linear-gradient(135deg,rgba(39,16,63,0.98),rgba(92,48,147,0.98)_58%,rgba(164,134,250,0.95))] px-5 text-sm font-semibold text-white"
-              >
-                {cta.label}
-              </a>
 
               <div className="flex flex-wrap items-center gap-3 rounded-[1.5rem] border border-border/70 bg-card/65 p-3">
                 <LocaleSwitcher />

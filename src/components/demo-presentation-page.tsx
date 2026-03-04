@@ -349,7 +349,7 @@ export async function DemoPresentationPage({ locale }: { locale: AppLocale }) {
                         eventName="cta_click"
                         payload={{ source: "demo_page_mid_primary", locale }}
                         variant="default"
-                        className="w-full justify-between border-white/20 bg-[linear-gradient(135deg,rgba(48,18,82,0.98),rgba(101,51,170,0.98)_55%,rgba(181,149,255,0.94))] shadow-[0_20px_54px_rgba(54,18,96,0.34)] hover:shadow-[0_26px_68px_rgba(54,18,96,0.42)]"
+                        className="w-full justify-between border-white/20 bg-[linear-gradient(135deg,rgba(48,18,82,0.98),rgba(101,51,170,0.98)_55%,rgba(181,149,255,0.94))] shadow-[inset_-1px_0_0_rgba(255,255,255,0.22),0_20px_54px_rgba(54,18,96,0.34)] hover:shadow-[inset_-1px_0_0_rgba(255,255,255,0.26),0_26px_68px_rgba(54,18,96,0.42)]"
                       >
                         {t("demoPage.whatCtaButton")}
                         <ArrowRight className="size-4" />

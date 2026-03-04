@@ -3,8 +3,7 @@ import {
   LineChart,
   Search,
   ShieldCheck,
-  Smartphone,
-  Sparkles
+  Smartphone
 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
@@ -67,6 +66,7 @@ export async function LandingPage({ locale }: { locale: AppLocale }) {
   const processTags = t.raw("socialProof.stepTags") as string[];
   const structuredData = buildStructuredData(locale);
   const benefitIcons = [Search, Smartphone, ShieldCheck, LineChart];
+  const processStepLabel = locale === "ro" ? "Pasul" : "Step";
 
   return (
     <>
@@ -115,6 +115,12 @@ export async function LandingPage({ locale }: { locale: AppLocale }) {
               title={t("showcase.title")}
               subtitle={t("showcase.subtitle")}
               items={showcaseItems}
+              cta={{
+                label: t("nav.cta"),
+                href: demoPagePath,
+                source: "showcase_primary",
+                locale
+              }}
               labels={{
                 media: t("showcase.mediaLabel"),
                 mobile: t("showcase.mobileLabel"),
@@ -195,17 +201,16 @@ export async function LandingPage({ locale }: { locale: AppLocale }) {
                 </Card>
               </Reveal>
 
-              <div className="grid gap-4">
+              <div className="grid gap-2">
                 {processItems.map((item, index) => (
                   <Reveal key={item.title} delay={index * 0.06}>
                     <Card className="rounded-[2rem] border-border/70 bg-card/72 backdrop-blur">
-                      <CardContent className="flex flex-col gap-5 p-6 sm:flex-row sm:items-start sm:justify-between sm:p-8">
-                        <div className="flex gap-4">
-                          <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
-                            <Sparkles className="size-5" />
+                      <CardContent className="flex flex-col gap-4 p-6 sm:flex-row sm:items-start sm:justify-between sm:p-8">
+                        <div className="flex gap-3">
+                          <div className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-accent/10 px-4 text-sm font-semibold text-accent">
+                            {processStepLabel} {index + 1}
                           </div>
                           <div className="space-y-2">
-                            <p className="text-sm font-medium text-muted-foreground">0{index + 1}</p>
                             <h3 className="text-xl font-semibold tracking-tight">{item.title}</h3>
                             <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">{item.description}</p>
                           </div>

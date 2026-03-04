@@ -156,15 +156,29 @@
         "format": "portrait",
         "tone": "slate"
       },
-      {
-        "title": "Website for a local brand",
-        "niche": "Premium web design",
-        "result": "Premium design, clearer hierarchy and an experience that instantly elevates perception.",
-        "format": "portrait",
-        "tone": "slate"
-      }
-    ]
-  },
+        {
+          "title": "Website for a local brand",
+          "niche": "Premium web design",
+          "result": "Premium design, clearer hierarchy and an experience that instantly elevates perception.",
+          "format": "portrait",
+          "tone": "slate"
+        },
+        {
+          "title": "Website for a beauty studio",
+          "niche": "Beauty / salon",
+          "result": "Luxury positioning, clearer services and a premium experience that supports direct bookings.",
+          "format": "portrait",
+          "tone": "teal"
+        },
+        {
+          "title": "Website for a premium business",
+          "niche": "Business website Romania",
+          "result": "Stronger positioning, clearer offer presentation and an online presence built for higher-value leads.",
+          "format": "portrait",
+          "tone": "indigo"
+        }
+      ]
+    },
   "benefits": {
     "badge": "What a premium website changes",
     "title": "A professional website changes how your business is perceived.",
@@ -223,29 +237,30 @@
     "subtitle": "Short brief. Clear direction. A premium website concept for your business, with no cost and no obligation.",
     "estimated": "~2 minutes",
     "stepLabel": "Step {current} of {total}",
-    "stepNames": [
-      "Business basics",
-      "Contact",
-      "Online presence",
-      "Preferences",
-      "Images and submit"
-    ],
-    "stepDescriptions": [
-      "Tell us who you are, where the business is based and what type of business it is.",
-      "We keep one clear contact for delivery and any required clarification.",
-      "Add the links that show how the business communicates online today.",
-      "Tell us what vibe, features and main action should be highlighted.",
-      "Upload images if you have them and submit the request with contact consent."
-    ],
+      "stepNames": [
+        "Business basics",
+        "Contact",
+        "Online presence",
+        "Preferences",
+        "Submit"
+      ],
+      "stepDescriptions": [
+        "Tell us what your business does and where it operates. This is where we shape the website positioning and structure.",
+        "The details we use to let you know when the demo is ready. Simple and direct.",
+        "Links to your social media or existing website, so we can understand your current presence.",
+        "Tell us the style you want: modern, elegant, luxury or minimalist. We adapt the design to your brand's vibe.",
+        "Review the request briefly and send it. Your demo arrives within 24h."
+      ],
     "tips": [
       "One free demo per business.",
       "You can submit without images.",
       "If we need clarification, we follow up simply and without pressure."
     ],
-    "labels": {
-      "businessName": "Business name",
-      "businessType": "Business type",
-      "city": "City / location",
+      "labels": {
+        "businessName": "Business name",
+        "businessType": "Business type",
+        "businessTypeOther": "Tell us what type of business you have",
+        "city": "City / location",
       "contactName": "Your name",
       "phone": "Phone",
       "email": "Email",
@@ -257,10 +272,11 @@
       "consent": "I agree to be contacted for the delivery of the demo."
     },
     "contactHint": "The person who should receive the demo",
-    "placeholders": {
-      "businessName": "Example: Atelier Bistro",
-      "businessType": "Example: restaurant, clinic, salon, local services",
-      "city": "Example: Cluj-Napoca",
+      "placeholders": {
+        "businessName": "Example: Atelier Bistro",
+        "businessType": "Select your business type",
+        "businessTypeOther": "Example: furniture showroom, podcast studio, production company",
+        "city": "Example: Cluj-Napoca",
       "contactName": "Example: Maria Pop",
       "phone": "Example: +40...",
       "email": "Example: contact@business.ro",
@@ -270,13 +286,47 @@
       "website": "https://...",
       "details": "Example: modern premium vibe, stronger booking flow, gallery, services, testimonials and clearer mobile hierarchy."
     },
-    "quickTypes": [
-      "Restaurant",
-      "Clinic",
-      "Barber",
-      "Salon",
-      "Local services"
-    ],
+      "quickTypes": [
+        "Restaurant",
+        "Fast food",
+        "Pizzeria",
+        "Coffee shop",
+        "Pastry shop",
+        "Bakery",
+        "Bar / lounge",
+        "Hotel",
+        "Guesthouse",
+        "Dental clinic",
+        "Medical clinic",
+        "Beauty clinic",
+        "Beauty salon",
+        "Barber shop",
+        "Spa",
+        "Fitness gym",
+        "Yoga / pilates studio",
+        "Pharmacy",
+        "Veterinary clinic",
+        "Real estate agency",
+        "Construction company",
+        "Cleaning company",
+        "Auto service",
+        "Car wash",
+        "Online store",
+        "Local store",
+        "Bookstore",
+        "Flower shop",
+        "Workshop / studio",
+        "Law firm",
+        "Accounting / consulting",
+        "Travel agency",
+        "School / courses",
+        "Private kindergarten",
+        "Events / wedding",
+        "Photographer / videographer",
+        "Local business",
+        "Other"
+      ],
+      "otherBusinessTypeValue": "Other",
     "detailChips": [
       "modern vibe",
       "quiet luxury",
@@ -288,9 +338,11 @@
       "testimonials"
     ],
     "detailChipLabel": "Useful shortcuts",
-    "linksNote": "If you do not have every link yet, just send what already exists.",
-    "detailsNote": "Tell us what the visitor should feel on the site and what action matters most.",
-    "uploadTitle": "Upload images",
+      "linksNote": "If you do not have every link yet, just send what already exists.",
+      "detailsNote": "Tell us what the visitor should feel on the site and what action matters most.",
+      "submitReviewTitle": "Send the request and we start quickly",
+      "submitReviewBody": "After submission you receive an email confirmation, and we start the review for your premium demo.",
+      "uploadTitle": "Upload images",
     "uploadSubtitle": "You can upload up to 6 images. If you do not have them now, submit anyway.",
     "uploadDrop": "Drag files here or click to choose images.",
     "uploadHint": "PNG, JPG or WEBP. Maximum 6 files. No account, no login.",
@@ -319,9 +371,6 @@
       "phone": "Enter a valid phone number.",
       "details": "Please share useful context, at least 20 characters.",
       "consent": "We need your consent to deliver the demo.",
-      "upload": "You can upload up to 6 images.",
-      "uploadConfig": "Uploads are not configured yet. Add the Cloudinary env values.",
-      "uploadFailed": "One of the uploads failed. Please try again.",
       "submit": "We could not send the request right now. Please try again."
     }
   },
@@ -368,18 +417,18 @@
     "title": "Privacy policy",
     "intro": "This page explains what data we collect through the form and how we use it to deliver the requested demo.",
     "sections": [
-      {
-        "title": "What data we collect",
-        "body": "We collect the details submitted in the form: business information, contact data, public links, preferences and optional image uploads."
-      },
+        {
+          "title": "What data we collect",
+          "body": "We collect the details submitted in the form: business information, contact data, public links and preferences."
+        },
       {
         "title": "How we use the data",
         "body": "We use the data only to review the request, prepare the demo and send the promised materials. We do not sell data or use it for unsolicited campaigns."
       },
-      {
-        "title": "Storage and providers",
-        "body": "Data may be processed through technical providers such as Vercel, Resend and Cloudinary strictly for hosting, email delivery and image uploads."
-      },
+        {
+          "title": "Storage and providers",
+          "body": "Data may be processed through technical providers such as Vercel and Resend strictly for hosting, form handling and email delivery."
+        },
       {
         "title": "Your rights",
         "body": "You can email hello@weberra.ro at any time to request access, correction or deletion of the submitted data."

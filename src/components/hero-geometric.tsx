@@ -1,8 +1,73 @@
 "use client";
 
-import { motion } from "framer-motion";
+import type { CSSProperties } from "react";
+import Image from "next/image";
+import { motion, useAnimationFrame, useMotionValue, useReducedMotion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+
 import { TrackedAnchor } from "@/src/components/tracked-anchor";
 import { cn } from "@/src/lib/utils";
+
+const DEBUG_X = false;
+
+type HeroMediaItem = {
+  src: string;
+  alt: string;
+  type: "image" | "video";
+};
+
+const heroShowcaseItems = [
+  {
+    src: "/hero-carousel/hero-carousel-1.jpeg",
+    alt: "Premium hero carousel website preview 1",
+    type: "image"
+  },
+  {
+    src: "/showcase/showcase-1.jpeg",
+    alt: "Showcase website preview 1",
+    type: "image"
+  },
+  {
+    src: "/hero-carousel/hero-carousel-2.jpeg",
+    alt: "Premium hero carousel website preview 2",
+    type: "image"
+  },
+  {
+    src: "/showcase/showcase-2.jpeg",
+    alt: "Showcase website preview 2",
+    type: "image"
+  },
+  {
+    src: "/hero-carousel/hero-carousel-3.jpeg",
+    alt: "Premium hero carousel website preview 3",
+    type: "image"
+  },
+  {
+    src: "/showcase/showcase-4.jpeg",
+    alt: "Showcase website preview 4",
+    type: "image"
+  },
+  {
+    src: "/hero-carousel/hero-carousel-4.jpeg",
+    alt: "Premium hero carousel website preview 4",
+    type: "image"
+  },
+  {
+    src: "/hero-carousel/hero-carousel-5.jpeg",
+    alt: "Premium hero carousel website preview 5",
+    type: "image"
+  },
+  {
+    src: "/hero-carousel/hero-carousel-6.jpeg",
+    alt: "Premium hero carousel website preview 6",
+    type: "image"
+  },
+  {
+    src: "/hero-carousel/hero-carousel-7.jpeg",
+    alt: "Premium hero carousel website preview 7",
+    type: "image"
+  }
+] as const;
 
 function ElegantShape({
   className,
@@ -67,6 +132,201 @@ function ElegantShape({
         />
       </motion.div>
     </motion.div>
+  );
+}
+
+function HeroShowcaseCard({
+  src,
+  alt,
+  type
+}: {
+  src: string;
+  alt: string;
+  type: HeroMediaItem["type"];
+}) {
+  return (
+    <div className="relative w-[var(--x-card-width)] shrink-0 rounded-[clamp(18px,2.4vw,30px)] border border-white/42 bg-white/54 p-[clamp(6px,0.8vw,10px)] shadow-[0_24px_70px_rgba(55,22,96,0.18)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.05]">
+      <div className="relative h-[var(--x-card-height)] overflow-hidden rounded-[clamp(14px,1.8vw,22px)] border border-white/55 bg-[#f5efff] dark:border-white/10 dark:bg-[#0d0716]">
+        {type === "video" ? (
+          <video
+            key={src}
+            className="h-full w-full object-cover object-top"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label={alt}
+          >
+            <source src={src} type="video/mp4" />
+          </video>
+        ) : (
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            sizes="(max-width: 640px) 240px, (max-width: 1024px) 272px, 336px"
+            className="object-cover object-top"
+            priority={false}
+          />
+        )}
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0)_26%,rgba(11,4,20,0.22)_100%)] dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0)_22%,rgba(3,1,7,0.38)_100%)]" />
+      </div>
+    </div>
+  );
+}
+
+function HeroShowcaseRail({
+  className,
+  speed,
+  direction = "left",
+  items
+}: {
+  className?: string;
+  speed: number;
+  direction?: "left" | "right";
+  items: readonly HeroMediaItem[];
+}) {
+  const loopRef = useRef<HTMLDivElement | null>(null);
+  const x = useMotionValue(0);
+  const reduceMotion = useReducedMotion();
+  const [loopWidth, setLoopWidth] = useState(0);
+
+  useEffect(() => {
+    if (!loopRef.current) {
+      return;
+    }
+
+    const element = loopRef.current;
+
+    const updateWidth = () => {
+      setLoopWidth(element.offsetWidth);
+    };
+
+    updateWidth();
+
+    const observer = new ResizeObserver(updateWidth);
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    x.set(direction === "left" ? 0 : -loopWidth);
+  }, [direction, loopWidth, x]);
+
+  useAnimationFrame((_, delta) => {
+    if (reduceMotion || loopWidth === 0) {
+      return;
+    }
+
+    const distance = (speed * delta) / 1000;
+    const current = x.get();
+
+    if (direction === "left") {
+      const next = current - distance;
+      x.set(next <= -loopWidth ? next + loopWidth : next);
+      return;
+    }
+
+    const next = current + distance;
+    x.set(next >= 0 ? next - loopWidth : next);
+  });
+
+  return (
+    <div className={cn("w-[var(--x-row-width)] overflow-hidden", className)}>
+      <motion.div className="flex w-max gap-[var(--x-gap)]" style={{ x }}>
+        <div ref={loopRef} className="flex gap-[var(--x-gap)] pr-[var(--x-gap)]">
+          {items.map((item, index) => (
+            <HeroShowcaseCard key={`${item.src}-${index}`} src={item.src} alt={item.alt} type={item.type} />
+          ))}
+        </div>
+        <div className="flex gap-[var(--x-gap)]">
+          {items.map((item, index) => (
+            <HeroShowcaseCard key={`${item.src}-${index}-clone`} src={item.src} alt={item.alt} type={item.type} />
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+function XBackground({ items }: { items: readonly HeroMediaItem[] }) {
+  const mirroredItems = [...items.slice(3), ...items.slice(0, 3)];
+  const debugRowClass = DEBUG_X ? "outline outline-1 outline-emerald-400/60" : "";
+  const xRowBaseStyle = {
+    transformOrigin: "center center"
+  } as CSSProperties;
+
+  return (
+    <div
+      className={cn(
+        "pointer-events-none absolute inset-0 z-[1] overflow-hidden",
+        "[--x-angle:clamp(10deg,2.2vw,16deg)]",
+        "[--x-card-width:clamp(180px,38vw,420px)]",
+        "[--x-card-height:clamp(110px,22vw,260px)]",
+        "[--x-gap:clamp(12px,2.4vw,24px)]",
+        "[--x-row-width:clamp(165vw,172vw,180vw)]",
+        "[--x-row-offset:clamp(28px,5vw,64px)]",
+        "[--x-anchor-shift:clamp(68px,13vw,108px)]",
+        "lg:[--x-row-width:clamp(136vw,142vw,148vw)]",
+        "lg:[--x-row-offset:clamp(30px,3.6vw,60px)]",
+        "lg:[--x-anchor-shift:clamp(36px,3.4vw,68px)]"
+      )}
+    >
+      <div className="absolute inset-y-0 left-0 z-[2] w-[clamp(18px,5vw,96px)] bg-[linear-gradient(90deg,rgba(244,238,255,0.94),rgba(244,238,255,0.62),transparent)] dark:bg-[linear-gradient(90deg,rgba(5,1,9,0.96),rgba(5,1,9,0.62),transparent)]" />
+      <div className="absolute inset-y-0 right-0 z-[2] w-[clamp(18px,5vw,96px)] bg-[linear-gradient(270deg,rgba(244,238,255,0.94),rgba(244,238,255,0.62),transparent)] dark:bg-[linear-gradient(270deg,rgba(5,1,9,0.96),rgba(5,1,9,0.62),transparent)]" />
+
+      <div
+        className="absolute left-1/2 z-[1] h-0 w-0 -translate-x-1/2 -translate-y-1/2"
+        style={{ top: "calc(50% - var(--x-anchor-shift))" }}
+      >
+        {DEBUG_X ? (
+          <>
+            <div className="absolute left-1/2 top-0 h-[200vh] w-px -translate-x-1/2 -translate-y-1/2 bg-cyan-400/70" />
+            <div className="absolute left-0 top-1/2 h-px w-[220vw] -translate-x-1/2 -translate-y-1/2 bg-cyan-400/70" />
+          </>
+        ) : null}
+
+        <div
+          className="absolute left-0 top-0"
+          style={{
+            ...xRowBaseStyle,
+            transform: "translate(-50%, calc(-50% - var(--x-row-offset)))"
+          }}
+        >
+          <div
+            className={debugRowClass}
+            style={{
+              ...xRowBaseStyle,
+              transform: "rotate(var(--x-angle))"
+            }}
+          >
+            <HeroShowcaseRail items={items} speed={25} className="opacity-[0.9]" />
+          </div>
+        </div>
+
+        <div
+          className="absolute left-0 top-0"
+          style={{
+            ...xRowBaseStyle,
+            transform: "translate(-50%, calc(-50% + var(--x-row-offset)))"
+          }}
+        >
+          <div
+            className={debugRowClass}
+            style={{
+              ...xRowBaseStyle,
+              transform: "rotate(calc(var(--x-angle) * -1))"
+            }}
+          >
+            <HeroShowcaseRail items={mirroredItems} direction="right" speed={20} className="opacity-[0.9]" />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -144,6 +404,10 @@ export function HeroGeometric({
         />
       </div>
 
+      <XBackground items={heroShowcaseItems} />
+
+      <div className="pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(circle_at_center,rgba(244,238,255,0.94)_0%,rgba(244,238,255,0.78)_22%,rgba(244,238,255,0.26)_52%,transparent_74%)] dark:bg-[radial-gradient(circle_at_center,rgba(5,1,9,0.92)_0%,rgba(5,1,9,0.74)_24%,rgba(5,1,9,0.28)_54%,transparent_76%)]" />
+
       <div className="relative z-10 section-shell px-4 pt-28 md:px-6 md:pt-32">
         <div className="mx-auto max-w-6xl text-center">
           <motion.div
@@ -167,7 +431,7 @@ export function HeroGeometric({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.7, ease: heroEase }}
           >
-            <p className="mx-auto mb-8 mt-6 max-w-2xl px-4 text-base font-light leading-relaxed tracking-wide text-black sm:text-lg md:mb-10 md:text-xl dark:text-white/48">
+            <p className="mx-auto mb-8 mt-6 max-w-2xl px-4 text-base font-light leading-relaxed tracking-wide text-[#1f102f] sm:text-lg md:mb-10 md:text-xl dark:text-white">
               {subtitle}
             </p>
           </motion.div>

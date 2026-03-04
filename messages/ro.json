@@ -18,7 +18,7 @@
   },
   "hero": {
     "eyebrow": "Website premium pentru afaceri locale din Romania",
-    "titleLine1": "Ridica afacerea ta.",
+    "titleLine1": "Ridica afacerea ta",
     "titleLine2": "la nivel premium.",
     "subtitle": "Demo gratuit în 24h. Website premium structurat strategic pentru creștere, credibilitate și vizibilitate.",
     "primaryCta": "Vezi cum functioneaza",
@@ -161,6 +161,20 @@
         "result": "Design premium, ierarhie clara si o experienta care ridica instant perceptia de brand.",
         "format": "portrait",
         "tone": "slate"
+      },
+      {
+        "title": "Website pentru beauty studio",
+        "niche": "Beauty / salon",
+        "result": "Imagine luxury, servicii clare si o experienta premium care sustine programarile directe.",
+        "format": "portrait",
+        "tone": "teal"
+      },
+      {
+        "title": "Website pentru business premium",
+        "niche": "Website business Romania",
+        "result": "Pozitionare serioasa, claritate in oferta si o prezenta online care sustine lead-uri mai valoroase.",
+        "format": "portrait",
+        "tone": "indigo"
       }
     ]
   },
@@ -222,20 +236,20 @@
     "subtitle": "Brief scurt. Directie clara. Website premium pentru afacerea ta, fara costuri si fara obligatii.",
     "estimated": "~2 minute",
     "stepLabel": "Pasul {current} din {total}",
-    "stepNames": [
-      "Date afacere",
-      "Contact",
-      "Prezenta online",
-      "Preferinte",
-      "Imagini si trimitere"
-    ],
-    "stepDescriptions": [
-      "Spune-ne cine esti, in ce oras esti si ce fel de business ai.",
-      "Lasam un contact clar pentru livrare si eventuale clarificari.",
-      "Adauga linkurile care ne arata cum comunici azi online.",
-      "Spune-ne ce vibe, ce functionalitati si ce actiune vrei sa scoatem in fata.",
-      "Incarci imagini daca le ai si trimiti cererea cu acordul de contact."
-    ],
+      "stepNames": [
+        "Date afacere",
+        "Contact",
+        "Prezenta online",
+        "Preferinte",
+        "Trimitere"
+      ],
+      "stepDescriptions": [
+        "Ne spui ce face business-ul tau si unde activeaza. De aici pornim pozitionarea si structura website-ului.",
+        "Datele prin care te anuntam cand demo-ul este gata. Simplu si direct.",
+        "Link-uri catre social media sau website existent, pentru a avea in vedere imaginea actuala.",
+        "Ne spui ce stil iti doresti: modern, elegant, luxury, minimalist. Adaptam designul pe vibe-ul afacerii tale.",
+        "Revizuim scurt cererea si o trimiti. In 24h primesti demo-ul."
+      ],
     "tips": [
       "Un singur demo gratuit per business.",
       "Poti trimite formularul si fara imagini.",
@@ -244,6 +258,7 @@
     "labels": {
       "businessName": "Nume afacere",
       "businessType": "Tip afacere",
+      "businessTypeOther": "Spune-ne ce tip de afacere ai",
       "city": "Locatie / oras",
       "contactName": "Numele tau",
       "phone": "Telefon",
@@ -258,7 +273,8 @@
     "contactHint": "Persoana catre care trimitem demo-ul",
     "placeholders": {
       "businessName": "Ex: Atelier Bistro",
-      "businessType": "Ex: restaurant, clinica, salon, servicii locale",
+      "businessType": "Selecteaza tipul afacerii",
+      "businessTypeOther": "Ex: showroom mobila, studio podcast, firma productie",
       "city": "Ex: Cluj-Napoca",
       "contactName": "Ex: Maria Pop",
       "phone": "Ex: 07xx xxx xxx",
@@ -271,11 +287,45 @@
     },
     "quickTypes": [
       "Restaurant",
-      "Clinica",
-      "Barber",
-      "Salon",
-      "Servicii locale"
+      "Fast food",
+      "Pizzerie",
+      "Coffee shop",
+      "Cofetarie",
+      "Brutarie",
+      "Bar / lounge",
+      "Hotel",
+      "Pensiune",
+      "Clinica dentara",
+      "Clinica medicala",
+      "Beauty clinic",
+      "Salon de infrumusetare",
+      "Barber shop",
+      "Spa",
+      "Sala de fitness",
+      "Studio yoga / pilates",
+      "Farmacie",
+      "Cabinet veterinar",
+      "Agentie imobiliara",
+      "Firma de constructii",
+      "Firma de curatenie",
+      "Service auto",
+      "Spalatorie auto",
+      "Magazin online",
+      "Magazin local",
+      "Librarie",
+      "Florarie",
+      "Atelier / studio",
+      "Firma de avocatura",
+      "Contabilitate / consultanta",
+      "Agentie de turism",
+      "Scoala / cursuri",
+      "Gradinita privata",
+      "Evenimente / wedding",
+      "Fotograf / videograf",
+      "Business local",
+      "Altele"
     ],
+    "otherBusinessTypeValue": "Altele",
     "detailChips": [
       "vibe modern",
       "lux discret",
@@ -287,9 +337,11 @@
       "recenzii"
     ],
     "detailChipLabel": "Scurtaturi utile",
-    "linksNote": "Daca nu ai toate linkurile, lasa doar ce exista acum.",
-    "detailsNote": "Spune-ne ce trebuie sa simta un client cand intra pe site si ce actiune vrei sa faca.",
-    "uploadTitle": "Upload imagini",
+      "linksNote": "Daca nu ai toate linkurile, lasa doar ce exista acum.",
+      "detailsNote": "Spune-ne ce trebuie sa simta un client cand intra pe site si ce actiune vrei sa faca.",
+      "submitReviewTitle": "Trimiti cererea si revenim rapid",
+      "submitReviewBody": "Dupa trimitere primesti confirmarea pe email, iar noi incepem analiza pentru demo-ul tau premium.",
+      "uploadTitle": "Upload imagini",
     "uploadSubtitle": "Poti incarca pana la 6 imagini. Daca nu le ai acum, trimite cererea oricum.",
     "uploadDrop": "Trage fisierele aici sau fa click pentru a alege imagini.",
     "uploadHint": "PNG, JPG sau WEBP. Maximum 6 fisiere. Fara cont, fara login.",
@@ -318,9 +370,6 @@
       "phone": "Introdu un numar de telefon valid.",
       "details": "Spune-ne cateva detalii utile, minimum 20 de caractere.",
       "consent": "Avem nevoie de acordul tau pentru a livra demo-ul.",
-      "upload": "Poti incarca maximum 6 imagini.",
-      "uploadConfig": "Upload-ul nu este configurat inca. Completeaza cheile Cloudinary in env.",
-      "uploadFailed": "Upload-ul a esuat pentru una dintre imagini. Incearca din nou.",
       "submit": "Nu am putut trimite cererea acum. Incearca din nou."
     }
   },
@@ -367,18 +416,18 @@
     "title": "Politica de confidentialitate",
     "intro": "Aceasta pagina explica pe scurt ce date colectam prin formular si cum le folosim pentru a livra demo-ul solicitat.",
     "sections": [
-      {
-        "title": "Ce date colectam",
-        "body": "Colectam datele introduse in formular: nume afacere, tip business, oras, date de contact, linkuri publice, preferinte si eventuale imagini."
-      },
+        {
+          "title": "Ce date colectam",
+          "body": "Colectam datele introduse in formular: nume afacere, tip business, oras, date de contact, linkuri publice si preferinte."
+        },
       {
         "title": "Cum folosim datele",
         "body": "Folosim datele exclusiv pentru a analiza cererea, a construi demo-ul si a reveni cu materialele promise. Nu vindem datele si nu le folosim pentru campanii nesolicitate."
       },
-      {
-        "title": "Stocare si furnizori",
-        "body": "Datele pot fi procesate prin furnizori tehnici precum Vercel, Resend si Cloudinary, strict pentru functionalitatea formularului, emailului si uploadului de imagini."
-      },
+        {
+          "title": "Stocare si furnizori",
+          "body": "Datele pot fi procesate prin furnizori tehnici precum Vercel si Resend, strict pentru functionalitatea formularului si livrarea emailurilor."
+        },
       {
         "title": "Drepturile tale",
         "body": "Ne poti scrie oricand la hello@weberra.ro pentru acces, rectificare sau stergerea datelor trimise."

@@ -15,7 +15,6 @@ export const demoRequestSchema = z.object({
   facebook: optionalLink,
   website: optionalLink,
   details: z.string().trim().min(20).max(2000),
-  imageUrls: z.array(z.string().url()).max(6),
   consent: z.literal(true),
   honey: z.string().max(0).optional().or(z.literal(""))
 });
