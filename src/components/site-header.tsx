@@ -81,9 +81,12 @@ export function SiteHeader({ locale, brandName, links, cta }: SiteHeaderProps) {
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
       <div className="section-shell relative max-w-none px-0">
         <div className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-border/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.72),rgba(243,233,255,0.66))] px-3 py-3 shadow-[0_20px_70px_rgba(58,28,93,0.14)] backdrop-blur-2xl dark:bg-[linear-gradient(135deg,rgba(32,14,51,0.82),rgba(15,8,24,0.80))] sm:px-5">
-          <Link href="/" locale={locale} className="flex items-center gap-3" onClick={handleBrandClick}>
-            <BrandMark brandName={brandName} className="size-11 sm:size-12" />
-            <span className="text-sm font-semibold tracking-[0.01em] sm:text-base">{brandName}</span>
+          <Link href="/" locale={locale} className="flex items-center" onClick={handleBrandClick}>
+            <BrandMark
+              brandName={brandName}
+              framed={false}
+              className="h-9 w-[8.8rem] sm:h-10 sm:w-[10rem]"
+            />
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
@@ -111,7 +114,7 @@ export function SiteHeader({ locale, brandName, links, cta }: SiteHeaderProps) {
                 trackEvent("cta_click", { source: `${cta.source}_mobile_bar`, locale });
                 closeMenu();
               }}
-              className="relative isolate inline-flex h-11 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-[linear-gradient(135deg,rgba(39,16,63,0.98),rgba(92,48,147,0.98)_58%,rgba(164,134,250,0.95))] px-4 text-sm font-semibold text-white shadow-[inset_-1px_0_0_rgba(255,255,255,0.22),0_18px_42px_rgba(88,43,140,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[inset_-1px_0_0_rgba(255,255,255,0.26),0_22px_55px_rgba(88,43,140,0.34)]"
+              className="relative isolate inline-flex h-9 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-[linear-gradient(135deg,rgba(39,16,63,0.98),rgba(92,48,147,0.98)_58%,rgba(164,134,250,0.95))] px-3 text-[11px] font-semibold text-white shadow-[inset_-1px_0_0_rgba(255,255,255,0.22),0_16px_36px_rgba(88,43,140,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[inset_-1px_0_0_rgba(255,255,255,0.26),0_20px_46px_rgba(88,43,140,0.3)] sm:h-10 sm:px-3.5 sm:text-xs"
             >
               {cta.label}
             </a>

@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Mail } from "lucide-react";
+import { Instagram, Mail, Music2 } from "lucide-react";
 
 import { BrandMark } from "@/src/components/brand-mark";
 import { Link } from "@/src/i18n/navigation";
@@ -25,7 +25,7 @@ export function SiteFooter({ locale, brandName, tagline, labels }: SiteFooterPro
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-5">
             <div className="flex items-center gap-3">
-              <BrandMark brandName={brandName} className="size-14 sm:size-16" />
+              <BrandMark brandName={brandName} className="h-12 w-[8.8rem] sm:h-14 sm:w-[10rem]" />
               <div>
                 <p className="text-xl font-semibold sm:text-2xl">{brandName}</p>
               </div>
@@ -50,11 +50,11 @@ export function SiteFooter({ locale, brandName, tagline, labels }: SiteFooterPro
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">Contact</p>
               <div className="space-y-3 text-sm text-muted-foreground">
                 <a
-                  href="mailto:hello@weberra.ro"
+                  href="mailto:contact@weberra.ro"
                   className="flex items-center gap-2 transition-colors hover:text-foreground"
                 >
                   <Mail className="size-4" />
-                  {labels.emailLabel}
+                  contact@weberra.ro
                 </a>
               </div>
             </div>
@@ -63,18 +63,18 @@ export function SiteFooter({ locale, brandName, tagline, labels }: SiteFooterPro
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">Social</p>
               <div className="space-y-3 text-sm text-muted-foreground">
                 <a
-                  href="https://www.instagram.com/weberra"
+                  href="https://www.instagram.com/weberra_/"
                   className="flex items-center gap-2 transition-colors hover:text-foreground"
                 >
                   <Instagram className="size-4" />
                   {labels.instagram}
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/weberra"
+                  href="https://www.tiktok.com/@weberra_"
                   className="flex items-center gap-2 transition-colors hover:text-foreground"
                 >
-                  <Linkedin className="size-4" />
-                  {labels.linkedin}
+                  <Music2 className="size-4" />
+                  TikTok
                 </a>
               </div>
             </div>

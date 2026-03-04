@@ -254,7 +254,6 @@ function HeroShowcaseRail({
 }
 
 function XBackground({ items }: { items: readonly HeroMediaItem[] }) {
-  const mirroredItems = [...items.slice(3), ...items.slice(0, 3)];
   const debugRowClass = DEBUG_X ? "outline outline-1 outline-emerald-400/60" : "";
   const xRowBaseStyle = {
     transformOrigin: "center center"
@@ -305,24 +304,6 @@ function XBackground({ items }: { items: readonly HeroMediaItem[] }) {
             }}
           >
             <HeroShowcaseRail items={items} speed={25} className="opacity-[0.9]" />
-          </div>
-        </div>
-
-        <div
-          className="absolute left-0 top-0"
-          style={{
-            ...xRowBaseStyle,
-            transform: "translate(-50%, calc(-50% + var(--x-row-offset)))"
-          }}
-        >
-          <div
-            className={debugRowClass}
-            style={{
-              ...xRowBaseStyle,
-              transform: "rotate(calc(var(--x-angle) * -1))"
-            }}
-          >
-            <HeroShowcaseRail items={mirroredItems} direction="right" speed={20} className="opacity-[0.9]" />
           </div>
         </div>
       </div>
